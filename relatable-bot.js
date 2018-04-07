@@ -24,6 +24,8 @@ client.on("message", async message => {
 
         if(args[1] == "showguilds"){
             console.log(client.guilds);
+            console.log("guilds rundown");
+            console.log(Array.from(client.guilds, x => x.name));
         }
 
         return;
