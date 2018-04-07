@@ -1,6 +1,5 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const helpIndex = require("./help.json");
 
 client.on("ready", () => {
     console.log("ready, fam");
@@ -15,7 +14,9 @@ client.on("message", async message => {
     if(cmd.startsWith(".fam")){
         var args = cmd.split(" ");
         if(args[1] == "help"){
-            message.channel.send(helpIndex.help1);
+            $.get("help.txt", function(data) {
+                message.channel.send(data);
+            }, "text");
         }
         return;
     }

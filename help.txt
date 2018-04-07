@@ -1,6 +1,4 @@
-{
-    "help1" : 
-"My trigger words are the following:
+My trigger words are the following:
 ```
 	Anything beginning with I or I'm
 	Heck and frick
@@ -22,5 +20,4 @@ Say any of those words/phrases and I'll get triggered. I also have a 5% chance o
 My commands are the following:
 ```
 	.fam help
-```"
-}
+```
