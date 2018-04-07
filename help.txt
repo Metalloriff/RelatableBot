@@ -14,10 +14,18 @@ My trigger words are the following:
 	STFU, shut, gay
 	Dab
 	Dad bot
+	Cancer
 ```
 Say any of those words/phrases and I'll get triggered. I also have a 5% chance of randomly getting triggerd, but you can relate, can't you fam?
 
 My commands are the following:
 ```
-	.fam help
+	.fam help - Displays this cancerous menu.
+	.fam getinvite - Gives the link to dad's cancerous server.
+	.fam info - Displays some cancerous info about myself.
 ```
+
+If you want to invite me to join your fam elsewhere, give your fam this link, fam.
+<https://discordapp.com/api/oauth2/authorize?client_id=431835277992919040&permissions=604097600&scope=bot>
+
+If you need any help or have any cancerous suggestions, talk to dad, Metalloriff#2891.

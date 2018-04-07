@@ -14,12 +14,20 @@ client.on("message", async message => {
 
     if(cmd.startsWith(".fam")){
         var args = cmd.split(" ");
+
         if(args[1] == "help"){
             fs.readFile("help.txt", "utf8", function(err, data){
                 if(err){ throw err; }
                 message.channel.send(data);
             }, "text");
         }
+
+        if(args[1] == "getinvite"){ message.channel.send("https://discord.gg/GyPaSWB"); }
+
+        if(args[1] == "info"){
+            message.channel.send(["Servers: " + client.guilds.size, "Average ping: " + client.ping, "Uptime: " + client.uptime].join("\n\n"));
+        }
+
         return;
     }
 
@@ -83,7 +91,12 @@ client.on("message", async message => {
 
     if(cmd.includes("send nudes")){ messages.push("you'll need this :microscope:"); }
 
-    if(cmd.includes("stfu") || cmd.includes("shut") || cmd.includes("gay") || cmd.includes("kys")){ messages.push("no u"); }
+    if(cmd == "stfu" || cmd == "shut" || cmd.includes("shut up") || cmd.includes("shut the fuck up") || cmd.includes("gay") || cmd.includes("kys")){
+        if(message.author.id == "264163473179672576")
+            messages.push("aw okay dad");
+        else
+            messages.push("no u");
+    }
 
     if(cmd.includes("dab")){
         var dabArray = [
@@ -108,11 +121,21 @@ client.on("message", async message => {
 
     if(cmd.includes("dad bot")){ messages.push("Dad butt sucks, I am superior! My memes are litter! By that I mean they're trash."); }
 
+    if(cmd.includes("cancer")){ messages.push("DID SOMEONE CALL FOR CANCER!?!?!?!?"); }
+
     if(messages.length > 3){
         message.channel.send("u tryna spam m8??? I can be the only cancer cell bitch");
         return;
     }else
         message.channel.send(messages.join("\n"));
+});
+
+client.on("channelCreate", channel => {
+    channel.send("first!");
+});
+
+client.on("typingStart", (channel, user) => {
+    if(Math.random() > 0.95){ channel.send("well hi there " + user.username) }
 });
 
 client.login(process.env.BOT_TOKEN);
