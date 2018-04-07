@@ -1,0 +1,13 @@
+{
+  "name": "RelatableBot",
+  "description": "Pure cancer.",
+  "version": "0.0.0",
+  "main": "relatable-bot.js",
+  "scripts": {
+    "start": "node relatable-bot.js"
+  },
+  "dependencies": {
+    "discord.js": "11.3.0",
+    "request": "2.81.0"
+  }
+}
