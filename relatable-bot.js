@@ -132,7 +132,7 @@ client.on("message", async message => {
             "https://cdn.discordapp.com/attachments/388749780676902913/432246816390512640/beenurdotpng.png"
         ], godlyIndex = godlyImages.length * Math.random() << 0;
         messages.push("godly image " + (godlyIndex + 1) + "/" + godlyImages.length);
-        messages.push(godlyImages[]);
+        messages.push(godlyImages[godlyIndex]);
     }
     
     if(cmd.includes("help")){ messages.push("you need help? well this is me with my life problems: http://i.imgur.com/Lk5SHX2.gifv"); }
