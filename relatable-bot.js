@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
+const fs = require("fs");
 
 client.on("ready", () => {
     console.log("ready, fam");
@@ -14,7 +15,8 @@ client.on("message", async message => {
     if(cmd.startsWith(".fam")){
         var args = cmd.split(" ");
         if(args[1] == "help"){
-            $.get("help.txt", function(data) {
+            fs.readFile("help.txt", "utf8", function(err, data){
+                if(err){ throw err; }
                 message.channel.send(data);
             }, "text");
         }
