@@ -66,7 +66,8 @@ client.on("message", async message => {
             "you should probably just take my permissions away from every channel except the spam channels",
             "daddy Metalloriff spanks me every night",
             "go call Metalloriff#2891 a twink, he really likes it, and I think he gets off on it",
-            "I apologize for being so cancerous... haha jk lol xdddddd"
+            "I apologize for being so cancerous... haha jk lol xdddddd",
+            "I singlehandedly shoved a whole bag of jelly beans up my ass"
         ];
         message.channel.send(responses[responses.length * Math.random() << 0]);
         return;
@@ -178,6 +179,14 @@ client.on("message", async message => {
     if(cmd.includes("dad bot")){ messages.push("Dad butt sucks, I am superior! My memes are litter! By that I mean they're trash."); }
 
     if(cmd.includes("cancer")){ messages.push("DID SOMEONE CALL FOR CANCER!?!?!?!?"); }
+
+    if(cmd.includes("discord")){ messages.push("Skype is better ( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)"); }
+
+    if(cmd.includes("useless bot")){
+        message.channel.send("at least I'm not a worthless, useless human being like yourself... and my dad").then(msg => setTimeout(() => {
+            msg.edit("at least I'm not a worthless, useless human being like yourself (you saw nothing)")
+        }, 3000));
+    }
 
     if(messages.length > 3){
         message.channel.send("u tryna spam m8??? I can be the only cancer cell bitch");
