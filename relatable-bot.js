@@ -187,7 +187,7 @@ client.on("channelCreate", channel => {
 });
 
 client.on("typingStart", (channel, user) => {
-    if(Math.random() > 0.95){ channel.send("well hi there " + user.username) }
+    if(Math.random() > 0.99){ channel.send("well hi there " + user.username) }
 });
 
 client.login(process.env.BOT_TOKEN);
