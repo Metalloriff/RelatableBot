@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
+const helpIndex = require("./help.json");
 
 client.on("ready", () => {
     console.log("ready, fam");
@@ -14,23 +15,7 @@ client.on("message", async message => {
     if(cmd.startsWith(".fam")){
         var args = cmd.split(" ");
         if(args[1] == "help"){
-            message.channel.send(
-`My trigger words are the following:
-    Anything beginning with **I** or **I'm**
-    **Heck** and **frick**
-    **Bass**
-    Being pinged
-    Any images
-    **Piss, urine, pee, horse, and pony**
-    **God**
-    **Help**
-    **Dylan**
-    **Dog**
-    **Send nudes**
-    **STFU, shut, gay**
-    **Dab**
-
-Say any of those words/phrases and I'll get triggered. I also have a 5% chance of randomly getting triggerd, but you can relate, can't you fam?`);
+            message.channel.send(helpIndex.help1);
         }
         return;
     }
