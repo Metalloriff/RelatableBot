@@ -12,7 +12,7 @@ client.on("message", async message => {
         return;
     var cmd = message.content.toLocaleLowerCase(), messages = new Array(), isDad = message.author.id == "264163473179672576";
 
-    if(cmd.startsWith(".fam")){
+    if(cmd.startsWith(".fam ")){
         var args = cmd.split(" ");
 
         if(args[1] == "help"){
@@ -36,6 +36,23 @@ client.on("message", async message => {
         return;
     }
 
+    if(cmd.startsWith(".famdev ")){
+        var args = cmd.split(" ");
+
+        console.log(message.author.tag + " ran dev command " + cmd);
+
+        if(!isDad){
+            message.channel.send("https://youtu.be/LR851d7QYco");
+            return;
+        }
+
+        if(args[1] == "showguilds"){
+            console.log(client.guilds);
+        }
+
+        return;
+    }
+
     if(Math.random() > 0.95){
         var responses = [
             "I once got really high and talked about shoving 47 crayons up my ass",
@@ -50,21 +67,6 @@ client.on("message", async message => {
             "I apologize for being so cancerous... haha jk lol xdddddd"
         ];
         message.channel.send(responses[responses.length * Math.random() << 0]);
-        return;
-    }
-
-    if(cmd.startsWith(".famdev")){
-        var args = cmd.split(" ");
-
-        if(!isDad){
-            message.channel.send("https://youtu.be/LR851d7QYco");
-            return;
-        }
-
-        if(args[1] == "showguilds"){
-            console.log(client.guilds);
-        }
-
         return;
     }
 
