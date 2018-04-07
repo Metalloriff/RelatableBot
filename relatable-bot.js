@@ -105,7 +105,35 @@ client.on("message", async message => {
 
     if(cmd.includes("piss") || cmd.includes("urine") || cmd.includes("pee") || cmd.includes("horse") || cmd.includes("pony")){ messages.push("https://i.imgur.com/5GmO9KF.jpg"); }
     
-    if(cmd.includes("god")){ messages.push("https://media.discordapp.net/attachments/406492136410972170/409752493891911681/what_am_I_doing_with_my_life.gif"); }
+    if(cmd.includes("god")){
+        var godlyImages = [
+            "https://cdn.discordapp.com/attachments/388749780676902913/432244190324326410/Capture_2018-04-07-13-20-37.png",
+            "https://cdn.discordapp.com/attachments/388749780676902913/432244421396791297/Capture_2018-04-07-13-21-57.png",
+            "https://cdn.discordapp.com/attachments/388749780676902913/432244757477982208/Capture_2018-04-07-13-25-48.png",
+            "https://media.discordapp.net/attachments/406492136410972170/409752493891911681/what_am_I_doing_with_my_life.gif",
+            "https://cdn.discordapp.com/attachments/388749780676902913/432245166837858314/Capture_2018-04-07-13-27-38.png",
+            "https://cdn.discordapp.com/attachments/388749780676902913/432245301441462272/no_means_no.jpg",
+            "https://cdn.discordapp.com/attachments/388749780676902913/432245380881842176/magik2.jpg",
+            "https://cdn.discordapp.com/attachments/388749780676902913/432245387169103878/magik1.jpg",
+            "https://cdn.discordapp.com/attachments/388749780676902913/432245504647233536/Capture_2018-04-07-13-29-06.png",
+            "https://cdn.discordapp.com/attachments/388749780676902913/432245682938839041/every_day_i_sit_and_wonder_why_am_i_still_alive_why_am_i_still_here_what_is_the_meaning_of_life.jpg",
+            "https://cdn.discordapp.com/attachments/388749780676902913/432245767642546185/ApplicationFrameHost_2018-03-16_15-58-53.jpg",
+            "https://cdn.discordapp.com/attachments/388749780676902913/432245780192034826/firefox_2018-03-04_21-40-43.jpg",
+            "https://cdn.discordapp.com/attachments/388749780676902913/432245797942198284/ritz.jpg",
+            "https://cdn.discordapp.com/attachments/388749780676902913/432245804552421387/wut_is_this.png",
+            "https://cdn.discordapp.com/attachments/388749780676902913/432245821497409547/U1hweJJ.jpg",
+            "https://cdn.discordapp.com/attachments/388749780676902913/432245983930220566/firefox_2017-09-14_09-33-37.png",
+            "https://cdn.discordapp.com/attachments/388749780676902913/432245990699827220/orgasm.jpg",
+            "https://cdn.discordapp.com/attachments/388749780676902913/432246034287165445/drunk-ass_max.jpg",
+            "https://cdn.discordapp.com/attachments/388749780676902913/432246093867253760/Trips_Child.jpg",
+            "https://cdn.discordapp.com/attachments/388749780676902913/432246131456737310/mouse_trap_guy.png",
+            "https://cdn.discordapp.com/attachments/388749780676902913/432246328370659328/god.gif",
+            "https://cdn.discordapp.com/attachments/388749780676902913/432246551880925184/hwat.gif",
+            "https://cdn.discordapp.com/attachments/388749780676902913/432246816390512640/beenurdotpng.png"
+        ], godlyIndex = godlyImages.length * Math.random() << 0;
+        messages.push("godly image " + (godlyIndex + 1) + "/" + godlyImages.length);
+        messages.push(godlyImages[]);
+    }
     
     if(cmd.includes("help")){ messages.push("you need help? well this is me with my life problems: http://i.imgur.com/Lk5SHX2.gifv"); }
 
