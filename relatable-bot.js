@@ -121,7 +121,7 @@ Say any of those words/phrases and I'll get triggered. I also have a 5% chance o
     if(cmd.includes("dad bot")){ messages.push("Dad butt sucks, I am superior! My memes are litter! By that I mean they're trash."); }
 
     if(messages.length > 3){
-        message.channel.send("you tryna spam m8???");
+        message.channel.send("u tryna spam m8??? I can be the only cancer cell bitch");
         return;
     }else
         message.channel.send(messages.join("\n"));
