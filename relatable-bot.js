@@ -10,7 +10,7 @@ client.on("ready", () => {
 client.on("message", async message => {
     if(message.author.bot && message.author.id != "247852652019318795")
         return;
-    var cmd = message.content.toLocaleLowerCase(), messages = new Array();
+    var cmd = message.content.toLocaleLowerCase(), messages = new Array(), isDad = message.author.id == "264163473179672576";
 
     if(cmd.startsWith(".fam")){
         var args = cmd.split(" ");
@@ -25,7 +25,12 @@ client.on("message", async message => {
         if(args[1] == "getinvite"){ message.channel.send("https://discord.gg/GyPaSWB"); }
 
         if(args[1] == "info"){
-            message.channel.send(["Servers: " + client.guilds.size, "Average ping: " + client.ping, "Uptime: " + client.uptime].join("\n\n"));
+            var minutes = Math.floor(client.uptime / 60000), seconds = ((client.uptime % 600000) / 1000).toFixed(0);
+            message.channel.send([
+                "Servers: " + client.guilds.size,
+                "Average ping: " + client.ping + "ms",
+                "Uptime: " + (minutes + ":" + (seconds < 10 ? "0" : "") + seconds)
+            ].join("\n\n"));
         }
 
         return;
@@ -45,6 +50,21 @@ client.on("message", async message => {
             "I apologize for being so cancerous... haha jk lol xdddddd"
         ];
         message.channel.send(responses[responses.length * Math.random() << 0]);
+        return;
+    }
+
+    if(cmd.startsWith(".famdev")){
+        var args = cmd.split(" ");
+
+        if(!isDad){
+            message.channel.send("https://youtu.be/LR851d7QYco");
+            return;
+        }
+
+        if(args[1] == "showguilds"){
+            console.log(client.guilds);
+        }
+
         return;
     }
 
@@ -92,7 +112,7 @@ client.on("message", async message => {
     if(cmd.includes("send nudes")){ messages.push("you'll need this :microscope:"); }
 
     if(cmd == "stfu" || cmd == "shut" || cmd.includes("shut up") || cmd.includes("shut the fuck up") || cmd.includes("gay") || cmd.includes("kys")){
-        if(message.author.id == "264163473179672576")
+        if(isDad)
             messages.push("aw okay dad");
         else
             messages.push("no u");
