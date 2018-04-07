@@ -12,7 +12,24 @@ client.on("message", async message => {
         return;
     var cmd = message.content.toLocaleLowerCase(), messages = new Array(), isDad = message.author.id == "264163473179672576";
 
-    if(cmd.startsWith(".fam ")){
+    if(cmd.startsWith(".famdev")){
+        var args = cmd.split(" ");
+
+        console.log(message.author.tag + " ran dev command " + cmd);
+
+        if(!isDad){
+            message.channel.send("https://youtu.be/LR851d7QYco");
+            return;
+        }
+
+        if(args[1] == "showguilds"){
+            console.log(client.guilds);
+        }
+
+        return;
+    }
+
+    if(cmd.startsWith(".fam")){
         var args = cmd.split(" ");
 
         if(args[1] == "help"){
@@ -31,23 +48,6 @@ client.on("message", async message => {
                 "Average ping: " + client.ping + "ms",
                 "Uptime: " + (minutes + ":" + (seconds < 10 ? "0" : "") + seconds)
             ].join("\n\n"));
-        }
-
-        return;
-    }
-
-    if(cmd.startsWith(".famdev ")){
-        var args = cmd.split(" ");
-
-        console.log(message.author.tag + " ran dev command " + cmd);
-
-        if(!isDad){
-            message.channel.send("https://youtu.be/LR851d7QYco");
-            return;
-        }
-
-        if(args[1] == "showguilds"){
-            console.log(client.guilds);
         }
 
         return;
