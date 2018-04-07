@@ -100,6 +100,10 @@ client.on("message", async message => {
             "OwO what's this? **notices ping**",
             "wanna fite m8???"
         ];
+        if(cmd.includes("mute")){
+            message.channel.send("Please don't mute me, I swear I'll be good! **dabdabdab**");
+            return;
+        }
         messages.push(nouResponses[nouResponses.length * Math.random() << 0]);
     }
 
