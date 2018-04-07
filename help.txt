@@ -11,10 +11,12 @@ My trigger words are the following:
 	Dylan
 	Dog
 	Send nudes
-	STFU, shut, gay
+	STFU, shut, gay, shut the fuck up, shut up, KYS
 	Dab
 	Dad bot
 	Cancer
+	Discord
+	Useless bot
 ```
 Say any of those words/phrases and I'll get triggered. I also have a 5% chance of randomly getting triggerd, but you can relate, can't you fam?
 
@@ -23,6 +25,7 @@ My commands are the following:
 	.fam help - Displays this cancerous menu.
 	.fam getinvite - Gives the link to dad's cancerous server.
 	.fam info - Displays some cancerous info about myself.
+	.fam welcome -- Displays the cancerous welcome message.
 ```
 
 If you want to invite me to join your fam elsewhere, give your fam this link, fam.

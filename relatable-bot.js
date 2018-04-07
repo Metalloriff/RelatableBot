@@ -2,10 +2,18 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const fs = require("fs");
 const sql = require("sqlite");
+const welcomeMessage = "Hello, I'm ``Relatable Bot``, but you can call me **PURE FUCKING CANCER**. :smiley:\n\nFirst thing's first, I highly recommend taking away my permissions everywhere except for the spam channels, shitposting channels, and bot command channels, because I'm an annoying, obnoxious little shit that will quickly turn any chat into one big shitpost.\n\nSecondly, use ``.fam help`` to view my trigger words and commands.\n\nThat is my introduction, fam, I hope to make your life a miserable hell. **dab**";
 
 client.on("ready", () => {
     console.log("ready, fam");
     client.user.setActivity("type '.fam help' fam");
+});
+
+client.on("guildCreate", guild => {
+    var general = guild.channels[guild.id];
+    if(general){
+        general.send(welcomeMessage);
+    }
 });
 
 client.on("message", async message => {
@@ -51,6 +59,8 @@ client.on("message", async message => {
                 "Uptime: " + (minutes + ":" + (seconds < 10 ? "0" : "") + seconds)
             ].join("\n\n"));
         }
+
+        if(args[1] == "welcome"){ message.channel.send(welcomeMessage); }
 
         return;
     }
@@ -184,7 +194,7 @@ client.on("message", async message => {
 
     if(cmd.includes("useless bot")){
         message.channel.send("at least I'm not a worthless, useless human being like yourself... and my dad").then(msg => setTimeout(() => {
-            msg.edit("at least I'm not a worthless, useless human being like yourself (you saw nothing)")
+            msg.edit("at least I'm not a worthless, useless human being like yourself ( ͡° ͜ʖ ͡°)");
         }, 3000));
     }
 
