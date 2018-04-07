@@ -45,7 +45,8 @@ Say any of those words/phrases and I'll get triggered. I also have a 5% chance o
             "kill yourself",
             "you should probably just take my permissions away from every channel except the spam channels",
             "daddy Metalloriff spanks me every night",
-            "go call Metalloriff#2891 a twink, he really likes it, and I think he gets off on it"
+            "go call Metalloriff#2891 a twink, he really likes it, and I think he gets off on it",
+            "I apologize for being so cancerous... haha jk lol xdddddd"
         ];
         message.channel.send(responses[responses.length * Math.random() << 0]);
         return;
@@ -109,7 +110,8 @@ Say any of those words/phrases and I'll get triggered. I also have a 5% chance o
             "https://thumb1.shutterstock.com/display_pic_with_logo/189250772/776509873/stock-photo-father-and-daughter-doing-dab-on-the-pier-776509873.jpg",
             "https://thumb1.shutterstock.com/display_pic_with_logo/1237180/696084196/stock-photo-senior-and-young-woman-making-dab-dance-outdoors-by-sea-pier-696084196.jpg",
             "https://thumb1.shutterstock.com/display_pic_with_logo/170141892/728777236/stock-photo-young-man-makes-a-dab-or-flex-it-s-dance-move-on-white-background-728777236.jpg",
-            "https://cdn.discordapp.com/attachments/323274833871896576/431971048171372544/Cam-dab-students-04-24-16.png"
+            "https://cdn.discordapp.com/attachments/323274833871896576/431971048171372544/Cam-dab-students-04-24-16.png",
+            "https://cdn.discordapp.com/attachments/323274833871896576/432031505280401408/0fyfv7bu6pl01.png"
         ];
         var dab = dabArray[dabArray.length * Math.random() << 0];
         if(dab.includes("shutterstock")){ messages.push("the most lit images come from shutterstock"); }
