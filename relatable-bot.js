@@ -278,9 +278,9 @@ client.on("message", async message => {
         return;
     }else{
         var joined = messages.join("\n");
-        if(lastMessage[message.guild.id] != joined && lastMessage[message.guild.id] != undefined && lastMessage[message.guild.id] != "")
+        if(lastMessage[message.guild.id] != joined)
             message.channel.send(joined);
-        else
+        else if(joined != "")
             message.channel.send(antiSpamMessage);
         lastMessage[message.guild.id] = joined;
     }
