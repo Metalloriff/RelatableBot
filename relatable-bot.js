@@ -6,6 +6,7 @@ const welcomeMessage = "Hello, I'm ``Relatable Bot``, but you can call me **PURE
 var stfuIn = new Array();
 var mockedChannels = new Array();
 var shutupUsers = new Object();
+var lastMessage = new Object();
 
 client.on("ready", () => {
     console.log("ready, fam");
@@ -265,11 +266,23 @@ client.on("message", async message => {
         return;
     }
 
+    var antiSpamMessages = [
+        "u tryna spam m8??? I can be the only cancer cell bitch",
+        "stop fucking spamming",
+        "stop u stupid little shit",
+        "no"
+    ], antiSpamMessage = antiSpamMessages[antiSpamMessages.length * Math.random() << 0];
     if(messages.length > 3){
-        message.channel.send("u tryna spam m8??? I can be the only cancer cell bitch");
+        message.channel.send(antiSpamMessage);
         return;
-    }else
-        message.channel.send(messages.join("\n"));
+    }else{
+        var joined = messages.join("\n");
+        if(lastMessage[message.guild.id] != joined)
+            message.channel.send(joined);
+        else
+            message.channel.send(antiSpamMessage);
+        lastMessage[message.guild.id] = joined;
+    }
 });
 
 client.on("channelCreate", channel => {
