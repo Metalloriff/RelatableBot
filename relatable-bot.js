@@ -85,7 +85,7 @@ client.on("message", async message => {
                 message.channel.send("no");
                 return;
             }
-            var user = message.mentions.users.first(1)[0];
+            var user = message.mentions.members.first(1)[0];
             if(shutupUsers[user.id] != undefined){
                 delete shutupUsers[user.id];
                 message.channel.send("you have been freed, fam");
@@ -96,8 +96,8 @@ client.on("message", async message => {
                 }
                 message.channel.send(message.cleanContent);
                 message.channel.send(user.tag);
-                message.channel.send(message.cleanContent.split(user.tag)[1]);
-                shutupUsers[user.id] = message.cleanContent.split(user.tag)[1];
+                message.channel.send(message.cleanContent.split(user.nickname ? user.nickname : user.user.username)[1]);
+                shutupUsers[user.id] = message.cleanContent.split(user.nickname ? user.nickname : user.user.username)[1];
                 message.channel.send("sorry fam");
             }
         }
