@@ -90,7 +90,8 @@ client.on("message", async message => {
                 return;
             }
             var user = message.mentions.users.keyArray()[0];
-            if(object.keys(shutupUsers).includes(user)){
+            console.log(user);
+            if(shutupUsersincludes[user] != undefined){
                 delete shutupUsers[user];
                 message.channel.send("you have been freed, fam");
             }else{
