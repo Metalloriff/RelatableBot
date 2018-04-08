@@ -94,10 +94,10 @@ client.on("message", async message => {
                     message.channel.send("you did this wrong, fam!\n\ncorrect usage: .fam shutup @user Their Name")
                     return;
                 }
-                message.channel.send(message.content);
+                message.channel.send(message.cleanContent);
                 message.channel.send(user.tag);
-                message.channel.send(message.content.split(user.tag)[1]);
-                shutupUsers[user.id] = message.content.split(user.tag)[1];
+                message.channel.send(message.cleanContent.split(user.tag)[1]);
+                shutupUsers[user.id] = message.cleanContent.split(user.tag)[1];
                 message.channel.send("sorry fam");
             }
         }
@@ -205,7 +205,8 @@ client.on("message", async message => {
             "https://cdn.discordapp.com/attachments/388749780676902913/432246551880925184/hwat.gif",
             "https://cdn.discordapp.com/attachments/388749780676902913/432246816390512640/beenurdotpng.png",
             "https://cdn.discordapp.com/attachments/392905457486004224/432375319220060162/Capture_2018-04-07-22-04-58.png",
-            "https://cdn.discordapp.com/attachments/388749780676902913/432376368215490560/Capture_2018-04-07-22-09-07.png"
+            "https://cdn.discordapp.com/attachments/388749780676902913/432376368215490560/Capture_2018-04-07-22-09-07.png",
+            "https://cdn.discordapp.com/attachments/388749780676902913/432380196339974144/Capture_2018-04-07-22-23-50.png"
         ], godlyIndex = godlyImages.length * Math.random() << 0;
         messages.push("godly image " + (godlyIndex + 1) + "/" + godlyImages.length);
         messages.push(godlyImages[godlyIndex]);
