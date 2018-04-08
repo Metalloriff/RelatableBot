@@ -81,7 +81,7 @@ client.on("message", async message => {
                 message.channel.send("you need to ping a user, fam!");
                 return;
             }
-            if(message.mentions.users.includes("431835277992919040")){
+            if(message.mentions.users.keyArray().includes("431835277992919040")){
                 message.channel.send("no");
                 return;
             }
@@ -90,7 +90,6 @@ client.on("message", async message => {
                 return;
             }
             var user = message.mentions.users.keyArray()[0];
-            console.log(user);
             if(shutupUsersincludes[user] != undefined){
                 delete shutupUsers[user];
                 message.channel.send("you have been freed, fam");
@@ -153,8 +152,6 @@ client.on("message", async message => {
     if(cmd.includes("heck") || cmd.includes("frick")){ messages.push("https://i.imgur.com/3DC8fcH.jpg"); }
     
     if(cmd.includes("bass")){ messages.push("https://i.imgur.com/sS2IkYC.jpg"); }
-    
-    if(message.attachments.keyArray().length > 0){ messages.push("#n3rds-random"); }
     
     if(message.mentions.users.keyArray().includes("431835277992919040")){
         var nouResponses = [
