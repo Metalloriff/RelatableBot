@@ -85,7 +85,7 @@ client.on("message", async message => {
                 message.channel.send("no");
                 return;
             }
-            var user = message.mentions.users.first(1);
+            var user = message.mentions.users.first(1)[0];
             if(shutupUsers[user.id] != undefined){
                 delete shutupUsers[user.id];
                 message.channel.send("you have been freed, fam");
