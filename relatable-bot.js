@@ -85,15 +85,17 @@ client.on("message", async message => {
                 message.channel.send("no");
                 return;
             }
-            if(args.length < 4){
-                message.channel.send("you did this wrong, fam!\n\ncorrect usage: .fam shutup @user Their Name")
-                return;
-            }
             var user = message.mentions.users.keyArray()[0];
             if(shutupUsers[user] != undefined){
                 delete shutupUsers[user];
                 message.channel.send("you have been freed, fam");
             }else{
+                if(args.length < 4){
+                    message.channel.send("you did this wrong, fam!\n\ncorrect usage: .fam shutup @user Their Name")
+                    return;
+                }
+                var name = "";
+                for(var i = 0; i < args.length; i++){ if(i > 3){ name += args[i] + " "; } }
                 shutupUsers[user] = args.splice(0, 3).join(" ");
                 message.channel.send("sorry fam");
             }
