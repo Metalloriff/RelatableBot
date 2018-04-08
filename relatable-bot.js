@@ -179,7 +179,6 @@ client.on("message", async message => {
             }else{
                 messages.push("aw okay dad");
                 stfuIn.push(message.channel.id);
-                stfu = true;
             }
         }else
             messages.push("no u");
