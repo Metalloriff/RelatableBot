@@ -274,10 +274,11 @@ client.on("message", async message => {
     ], antiSpamMessage = antiSpamMessages[antiSpamMessages.length * Math.random() << 0];
     if(messages.length > 3){
         message.channel.send(antiSpamMessage);
+        lastMessage[message.guild.id] = "";
         return;
     }else{
         var joined = messages.join("\n");
-        if(lastMessage[message.guild.id] != joined)
+        if(lastMessage[message.guild.id] != joined && lastMessage[message.guild.id] != undefined && lastMessage[message.guild.id] != "")
             message.channel.send(joined);
         else
             message.channel.send(antiSpamMessage);
