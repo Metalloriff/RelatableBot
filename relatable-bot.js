@@ -85,18 +85,16 @@ client.on("message", async message => {
                 message.channel.send("no");
                 return;
             }
-            var user = message.mentions.users.keyArray()[0];
-            if(shutupUsers[user] != undefined){
-                delete shutupUsers[user];
+            var user = message.mentions.users.first();
+            if(shutupUsers[user.id] != undefined){
+                delete shutupUsers[user.id];
                 message.channel.send("you have been freed, fam");
             }else{
                 if(args.length < 4){
                     message.channel.send("you did this wrong, fam!\n\ncorrect usage: .fam shutup @user Their Name")
                     return;
                 }
-                var name = "";
-                for(var i = 0; i < args.length; i++){ if(i > 3){ name += args[i] + " "; } }
-                shutupUsers[user] = args.splice(0, 3).join(" ");
+                shutupUsers[user.id] = message.content.split(user.tag)[1];
                 message.channel.send("sorry fam");
             }
         }
@@ -202,7 +200,9 @@ client.on("message", async message => {
             "https://cdn.discordapp.com/attachments/388749780676902913/432246131456737310/mouse_trap_guy.png",
             "https://cdn.discordapp.com/attachments/388749780676902913/432246328370659328/god.gif",
             "https://cdn.discordapp.com/attachments/388749780676902913/432246551880925184/hwat.gif",
-            "https://cdn.discordapp.com/attachments/388749780676902913/432246816390512640/beenurdotpng.png"
+            "https://cdn.discordapp.com/attachments/388749780676902913/432246816390512640/beenurdotpng.png",
+            "https://cdn.discordapp.com/attachments/392905457486004224/432375319220060162/Capture_2018-04-07-22-04-58.png",
+            "https://cdn.discordapp.com/attachments/388749780676902913/432376368215490560/Capture_2018-04-07-22-09-07.png"
         ], godlyIndex = godlyImages.length * Math.random() << 0;
         messages.push("godly image " + (godlyIndex + 1) + "/" + godlyImages.length);
         messages.push(godlyImages[godlyIndex]);
