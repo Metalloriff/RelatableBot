@@ -94,7 +94,7 @@ client.on("message", async message => {
                 delete shutupUsers[user];
                 message.channel.send("you have been freed, fam");
             }else{
-                shutupUsers[user] = Array.join(args.splice(0, 3), " ");
+                shutupUsers[user] = args.splice(0, 3).join(" ");
                 message.channel.send("sorry fam");
             }
         }
