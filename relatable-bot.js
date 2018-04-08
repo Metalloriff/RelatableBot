@@ -5,6 +5,7 @@ const sql = require("sqlite");
 const welcomeMessage = "Hello, I'm ``Relatable Bot``, but you can call me **PURE FUCKING CANCER**. :smiley:\n\nFirst thing's first, I highly recommend taking away my permissions everywhere except for the spam channels, shitposting channels, and bot command channels, because I'm an annoying, obnoxious little shit that will quickly turn any chat into one big shitpost.\n\nSecondly, use ``.fam help`` to view my trigger words and commands.\n\nThat is my introduction, fam, I hope to make your life a miserable hell. **dab**";
 var stfuIn = new Array();
 var mockedChannels = new Array();
+var shutupUsers = new Object();
 
 client.on("ready", () => {
     console.log("ready, fam");
@@ -42,7 +43,8 @@ client.on("message", async message => {
     }
 
     if(cmd.startsWith(".fam")){
-        var args = cmd.split(" ");
+        var args = message.content.split(" ");
+        args[1] = args[1].toLowerCase();
 
         if(args[1] == "help"){
             fs.readFile("help.txt", "utf8", function(err, data){
@@ -74,6 +76,34 @@ client.on("message", async message => {
             }
         }
 
+        if(args[1] == "shutup"){
+            if(message.mentions.users.keyArray().length == 0){
+                message.channel.send("you need to ping a user, fam!");
+                return;
+            }
+            if(message.mentions.users.includes("431835277992919040")){
+                message.channel.send("no");
+                return;
+            }
+            if(args.length < 4){
+                message.channel.send("you did this wrong, fam!\n\ncorrect usage: .fam shutup @user Their Name")
+                return;
+            }
+            var user = message.mentions.users.keyArray()[0];
+            if(object.keys(shutupUsers).includes(user)){
+                delete shutupUsers[user];
+                message.channel.send("you have been freed, fam");
+            }else{
+                shutupUsers[user] = Array.join(args.splice(0, 3), " ");
+                message.channel.send("sorry fam");
+            }
+        }
+
+        return;
+    }
+
+    if(shutupUsers[message.author.id] != undefined){
+        message.channel.send("shut up " + shutupUsers[message.author.id]);
         return;
     }
 

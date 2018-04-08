@@ -27,6 +27,7 @@ My commands are the following:
 	.fam info - Displays some cancerous info about myself.
 	.fam welcome - Displays the cancerous welcome message.
 	.fam mock - Literal cancer, and it should not exist.
+	.fam shutup <usertag> <name> - Says "shut up <name>" every time the specified user says something.
 ```
 
 If you want to invite me to join your fam elsewhere, give your fam this link, fam.
