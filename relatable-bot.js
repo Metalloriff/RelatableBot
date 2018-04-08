@@ -3,6 +3,7 @@ const client = new Discord.Client();
 const fs = require("fs");
 const sql = require("sqlite");
 const welcomeMessage = "Hello, I'm ``Relatable Bot``, but you can call me **PURE FUCKING CANCER**. :smiley:\n\nFirst thing's first, I highly recommend taking away my permissions everywhere except for the spam channels, shitposting channels, and bot command channels, because I'm an annoying, obnoxious little shit that will quickly turn any chat into one big shitpost.\n\nSecondly, use ``.fam help`` to view my trigger words and commands.\n\nThat is my introduction, fam, I hope to make your life a miserable hell. **dab**";
+var stfuIn = new Array();
 
 client.on("ready", () => {
     console.log("ready, fam");
@@ -19,7 +20,7 @@ client.on("guildCreate", guild => {
 client.on("message", async message => {
     if(message.author.bot && message.author.id != "247852652019318795")
         return;
-    var cmd = message.content.toLocaleLowerCase(), messages = new Array(), isDad = message.author.id == "264163473179672576";
+    var cmd = message.content.toLocaleLowerCase(), messages = new Array(), isDad = message.author.id == "264163473179672576", stfu = stfuIn.includes(message.channel.id);
 
     if(cmd.startsWith(".famdev")){
         var args = cmd.split(" ");
@@ -65,31 +66,42 @@ client.on("message", async message => {
         return;
     }
 
-    if(Math.random() > 0.95){
-        var responses = [
-            "I once got really high and talked about shoving 47 crayons up my ass",
-            "yo that's cool fam",
-            "uhuh, now go make me a sandwich",
-            "nobody cares",
-            "I am just one giant shitpost fam",
-            "kill yourself",
-            "you should probably just take my permissions away from every channel except the spam channels",
-            "daddy Metalloriff spanks me every night",
-            "go call Metalloriff#2891 a twink, he really likes it, and I think he gets off on it",
-            "I apologize for being so cancerous... haha jk lol xdddddd",
-            "I singlehandedly shoved a whole bag of jelly beans up my ass"
-        ];
-        message.channel.send(responses[responses.length * Math.random() << 0]);
-        return;
+    if(stfu == false){
+
+        if(Math.random() > 0.95){
+            var responses = [
+                "my dad once got really high and talked about shoving 47 crayons up his ass",
+                "yo that's cool fam",
+                "uhuh, now go make me a sandwich",
+                "nobody cares",
+                "I am just one giant shitpost fam",
+                "kill yourself",
+                "you should probably just take my permissions away from every channel except the spam channels",
+                "daddy Metalloriff spanks me every night",
+                "go call Metalloriff#2891 a twink, he really likes it, and I think he gets off on it",
+                "I apologize for being so cancerous... haha jk lol xdddddd",
+                "I singlehandedly shoved a whole bag of jelly beans up my ass",
+                "my dad says I have a couple of semi-colons up in my head loose"
+            ];
+            message.channel.send(responses[responses.length * Math.random() << 0]);
+            return;
+        }
+
+        if(message.author.id == "247852652019318795"){ message.channel.send("Shut up Dad Bot, I am superior."); return; }
+
+        if(message.author.id == "272177766890471430" && Math.random() > 0.9){ message.channel.send("Shut up Dylan"); return; }
+
+        if(message.author.id == "296227376268967936" && Math.random() > 0.9){ message.channel.send("Shut up Trip"); return; }
+
+        if(cmd.startsWith("i ") || cmd.startsWith("i'm ") || cmd.startsWith("im ")){ message.channel.send("same fam"); return; }
+
+        if(cmd.includes("useless bot")){
+            message.channel.send("at least I'm not a worthless, useless human being like yourself... and my dad").then(msg => setTimeout(() => {
+                msg.edit("at least I'm not a worthless, useless human being like yourself ( ͡° ͜ʖ ͡°)");
+            }, 3000));
+        }
+
     }
-
-    if(message.author.id == "247852652019318795"){ message.channel.send("Shut up Dad Bot, I am superior."); return; }
-
-    if(message.author.id == "272177766890471430" && Math.random() > 0.9){ message.channel.send("Shut up Dylan"); return; }
-
-    if(message.author.id == "296227376268967936" && Math.random() > 0.9){ message.channel.send("Shut up Trip"); return; }
-
-    if(cmd.startsWith("i ") || cmd.startsWith("i'm ") || cmd.startsWith("im ")){ message.channel.send("same fam"); return; }
     
     if(cmd.includes("heck") || cmd.includes("frick")){ messages.push("https://i.imgur.com/3DC8fcH.jpg"); }
     
@@ -159,9 +171,17 @@ client.on("message", async message => {
     if(cmd.includes("send nudes")){ messages.push("you'll need this :microscope:"); }
 
     if(cmd == "stfu" || cmd == "shut" || cmd.includes("shut up") || cmd.includes("shut the fuck up") || cmd.includes("gay") || cmd.includes("kys")){
-        if(isDad)
-            messages.push("aw okay dad");
-        else
+        if(isDad){
+            if(stfu){
+                messages.push("you can't control me, dad!");
+                stfuIn.splice(stfuIn.indexOf(message.channel.id), 1);
+                stfu = false;
+            }else{
+                messages.push("aw okay dad");
+                stfuIn.push(message.channel.id);
+                stfu = true;
+            }
+        }else
             messages.push("no u");
     }
 
@@ -192,10 +212,9 @@ client.on("message", async message => {
 
     if(cmd.includes("discord")){ messages.push("Skype is better ( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)"); }
 
-    if(cmd.includes("useless bot")){
-        message.channel.send("at least I'm not a worthless, useless human being like yourself... and my dad").then(msg => setTimeout(() => {
-            msg.edit("at least I'm not a worthless, useless human being like yourself ( ͡° ͜ʖ ͡°)");
-        }, 3000));
+    if(stfu == true && messages.length > 0){
+        message.channel.send("my dad told me to stfu, I'm in timeout");
+        return;
     }
 
     if(messages.length > 3){
