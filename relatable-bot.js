@@ -85,7 +85,7 @@ client.on("message", async message => {
                 message.channel.send("no");
                 return;
             }
-            var user = message.mentions.users.first();
+            var user = message.mentions.users.first(1);
             if(shutupUsers[user.id] != undefined){
                 delete shutupUsers[user.id];
                 message.channel.send("you have been freed, fam");
@@ -94,6 +94,9 @@ client.on("message", async message => {
                     message.channel.send("you did this wrong, fam!\n\ncorrect usage: .fam shutup @user Their Name")
                     return;
                 }
+                message.channel.send(message.content);
+                message.channel.send(user.tag);
+                message.channel.send(message.content.split(user.tag)[1]);
                 shutupUsers[user.id] = message.content.split(user.tag)[1];
                 message.channel.send("sorry fam");
             }
