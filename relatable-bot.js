@@ -94,10 +94,7 @@ client.on("message", async message => {
                     message.channel.send("you did this wrong, fam!\n\ncorrect usage: .fam shutup @user Their Name")
                     return;
                 }
-                message.channel.send(message.cleanContent);
-                message.channel.send(user.tag);
-                message.channel.send(message.cleanContent.split(user.nickname ? user.nickname : user.user.username)[1]);
-                shutupUsers[user.id] = message.cleanContent.split(user.nickname ? user.nickname : user.user.username)[1];
+                shutupUsers[user.id] = message.cleanContent.split((user.nickname ? user.nickname : user.user.username) + " ")[1];
                 message.channel.send("sorry fam");
             }
         }
