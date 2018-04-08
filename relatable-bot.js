@@ -258,6 +258,8 @@ client.on("message", async message => {
 
     if(cmd.includes("discord")){ messages.push("Skype is better ( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)"); }
 
+    if(cmd.includes("women") || cmd.includes("woman") || cmd.includes("girl")){ messages.push("https://pics.me.me/hippity-hoppity-women-are-property-22956754.png"); }
+
     if(stfu == true && messages.length > 0){
         message.channel.send("my dad told me to stfu, I'm in timeout");
         return;
