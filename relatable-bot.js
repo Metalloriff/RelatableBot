@@ -4,6 +4,7 @@ const fs = require("fs");
 const sql = require("sqlite");
 const welcomeMessage = "Hello, I'm ``Relatable Bot``, but you can call me **PURE FUCKING CANCER**. :smiley:\n\nFirst thing's first, I highly recommend taking away my permissions everywhere except for the spam channels, shitposting channels, and bot command channels, because I'm an annoying, obnoxious little shit that will quickly turn any chat into one big shitpost.\n\nSecondly, use ``.fam help`` to view my trigger words and commands.\n\nThat is my introduction, fam, I hope to make your life a miserable hell. **dab**";
 var stfuIn = new Array();
+var mockedChannels = new Array();
 
 client.on("ready", () => {
     console.log("ready, fam");
@@ -63,6 +64,21 @@ client.on("message", async message => {
 
         if(args[1] == "welcome"){ message.channel.send(welcomeMessage); }
 
+        if(args[1] == "mock"){
+            if(mockedChannels.includes(message.channel.id)){
+                mockedChannels.splice(mockedChannels.indexOf(message.channel.id), 1);
+                message.channel.send("okay I'll shut the fuck up");
+            }else{
+                mockedChannels.push(message.channel.id);
+                message.channel.send("why don't ya say something, fam?");
+            }
+        }
+
+        return;
+    }
+
+    if(mockedChannels.includes(message.channel.id)){
+        message.channel.send(message.content);
         return;
     }
 

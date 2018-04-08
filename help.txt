@@ -25,7 +25,8 @@ My commands are the following:
 	.fam help - Displays this cancerous menu.
 	.fam getinvite - Gives the link to dad's cancerous server.
 	.fam info - Displays some cancerous info about myself.
-	.fam welcome -- Displays the cancerous welcome message.
+	.fam welcome - Displays the cancerous welcome message.
+	.fam mock - Literal cancer, and it should not exist.
 ```
 
 If you want to invite me to join your fam elsewhere, give your fam this link, fam.
