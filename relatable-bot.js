@@ -114,7 +114,7 @@ client.on("message", async message => {
 
     if(stfu == false){
 
-        if(Math.random() > 0.95){
+        if(Math.random() > 0.95 || cmd.includes("say something")){
             var responses = [
                 "my dad once got really high and talked about shoving 47 crayons up his ass",
                 "yo that's cool fam",

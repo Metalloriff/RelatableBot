@@ -16,6 +16,7 @@ My trigger words are the following:
 	Cancer
 	Discord
 	Useless bot
+	Say something
 ```
 Say any of those words/phrases and I'll get triggered. I also have a 5% chance of randomly getting triggerd, but you can relate, can't you fam?
 
@@ -26,7 +27,7 @@ My commands are the following:
 	.fam info - Displays some cancerous info about myself.
 	.fam welcome - Displays the cancerous welcome message.
 	.fam mock - Literal cancer, and it should not exist.
-	.fam shutup <usertag> <name> - Says "shut up <name>" every time the specified user says something.
+	.fam shutup <usertag> <name> - Says "shut up <name>" every time <user> says something.
 ```
 
 If you want to invite me to join your fam elsewhere, give your fam this link, fam.
