@@ -23,7 +23,10 @@ client.on("guildCreate", guild => {
 client.on("message", async message => {
     if(message.author.bot && message.author.id != "247852652019318795")
         return;
-    var cmd = message.content.toLocaleLowerCase(), messages = new Array(), isDad = message.author.id == "264163473179672576", stfu = stfuIn.includes(message.channel.id);
+    var cmd = message.content.toLocaleLowerCase(), messages = new Array(),
+    words = cmd.split(" "),
+    isDad = message.author.id == "264163473179672576",
+    stfu = stfuIn.includes(message.channel.id);
 
     if(cmd.startsWith(".famdev")){
         var args = cmd.split(" ");
@@ -128,7 +131,10 @@ client.on("message", async message => {
                 "go call Metalloriff#2891 a twink, he really likes it, and I think he gets off on it",
                 "I apologize for being so cancerous... haha jk lol xdddddd",
                 "I singlehandedly shoved a whole bag of jelly beans up my ass",
-                "my dad says I have a couple of semi-colons up in my head loose"
+                "my dad says I have a couple of semi-colons up in my head loose",
+                "my dad masturbates to horses, honestly",
+                "hey my dad finally added new stuff to me! I feel rejuvinated. I nailed that spelling, right?",
+                "frickly frack"
             ];
             message.channel.send(responses[responses.length * Math.random() << 0]);
             return;
@@ -141,6 +147,11 @@ client.on("message", async message => {
         if(message.author.id == "296227376268967936" && Math.random() > 0.9){ message.channel.send("Shut up Trip"); return; }
 
         if(cmd.startsWith("i ") || cmd.startsWith("i'm ") || cmd.startsWith("im ")){ message.channel.send("same fam"); return; }
+        
+        if(cmd.startsWith("somebody")) {
+            message.channel.send("ONCE TOLD ME THE WORLD WAS GONNA ROLL ME, I AIN'T THE SHARPEST TOOL IN THE SHED.SHE WAS LOOKIN' KINDA DUMB WITH HER FINGER AND HER THUMB IN THE SHAPE OF AN L ON HER FOREHEAD");
+            return;
+        }
 
         if(cmd.includes("useless bot")){
             message.channel.send("at least I'm not a worthless, useless human being like yourself... and my dad").then(msg => setTimeout(() => {
@@ -150,9 +161,9 @@ client.on("message", async message => {
 
     }
     
-    if(cmd.includes("heck") || cmd.includes("frick")){ messages.push("https://i.imgur.com/3DC8fcH.jpg"); }
+    if(words.includes("heck") || words.includes("frick")){ messages.push("https://i.imgur.com/3DC8fcH.jpg"); }
     
-    if(cmd.includes("bass")){ messages.push("https://i.imgur.com/sS2IkYC.jpg"); }
+    if(words.includes("bass")){ messages.push("https://i.imgur.com/sS2IkYC.jpg"); }
     
     if(message.mentions.users.keyArray().includes("431835277992919040")){
         var nouResponses = [
@@ -168,16 +179,16 @@ client.on("message", async message => {
             "OwO what's this? **notices ping**",
             "wanna fite m8???"
         ];
-        if(cmd.includes("mute")){
+        if(words.includes("mute")){
             message.channel.send("Please don't mute me, I swear I'll be good! **dabdabdab**");
             return;
         }
         messages.push(nouResponses[nouResponses.length * Math.random() << 0]);
     }
 
-    if(cmd.includes("piss") || cmd.includes("urine") || cmd.includes("pee") || cmd.includes("horse") || cmd.includes("pony")){ messages.push("https://i.imgur.com/5GmO9KF.jpg"); }
+    if(words.includes("piss") || words.includes("urine") || words.includes("pee") || words.includes("horse") || words.includes("pony")){ messages.push("https://i.imgur.com/5GmO9KF.jpg"); }
     
-    if(cmd.includes("god")){
+    if(words.includes("god")){
         var godlyImages = [
             "https://cdn.discordapp.com/attachments/388749780676902913/432244190324326410/Capture_2018-04-07-13-20-37.png",
             "https://cdn.discordapp.com/attachments/388749780676902913/432244421396791297/Capture_2018-04-07-13-21-57.png",
@@ -204,21 +215,21 @@ client.on("message", async message => {
             "https://cdn.discordapp.com/attachments/388749780676902913/432246816390512640/beenurdotpng.png",
             "https://cdn.discordapp.com/attachments/392905457486004224/432375319220060162/Capture_2018-04-07-22-04-58.png",
             "https://cdn.discordapp.com/attachments/388749780676902913/432376368215490560/Capture_2018-04-07-22-09-07.png",
-            "https://cdn.discordapp.com/attachments/388749780676902913/432380196339974144/Capture_2018-04-07-22-23-50.png"
+            "https://cdn.discordapp.com/attachments/388749780676902913/432380196339974144/Capture_2018-04-07-22-23-50.png",
+            "https://cdn.discordapp.com/attachments/388749780676902913/433432881306533908/Screenshot_218.png",
+            "https://cdn.discordapp.com/attachments/388749780676902913/434519532506447895/Capture_2018-04-13-20-04-50.png"
         ], godlyIndex = godlyImages.length * Math.random() << 0;
         messages.push("godly image " + (godlyIndex + 1) + "/" + godlyImages.length);
         messages.push(godlyImages[godlyIndex]);
     }
     
-    if(cmd.includes("help")){ messages.push("you need help? well this is me with my life problems: http://i.imgur.com/Lk5SHX2.gifv"); }
-
-    if(cmd.includes("dylan")){ messages.push("did somebody say Dylan??? https://i.imgur.com/54qSyDL.png"); }
+    if(words.includes("help")){ messages.push("you need help? well this is me with my life problems: http://i.imgur.com/Lk5SHX2.gifv"); }
     
-    if(cmd.includes("dog")){ messages.push("https://youtu.be/gvyl82t9IuY"); }
+    if(words.includes("dog")){ messages.push("https://youtu.be/gvyl82t9IuY"); }
 
     if(cmd.includes("send nudes")){ messages.push("you'll need this :microscope:"); }
 
-    if(cmd == "stfu" || cmd == "shut" || cmd.includes("shut up") || cmd.includes("shut the fuck up") || cmd.includes("gay") || cmd.includes("kys")){
+    if(words == "stfu" || words == "shut" || cmd.includes("shut up") || cmd.includes("shut the fuck up") || words.includes("kys")){
         if(isDad){
             if(stfu){
                 messages.push("you can't control me, dad!");
@@ -229,10 +240,10 @@ client.on("message", async message => {
                 stfuIn.push(message.channel.id);
             }
         }else
-            messages.push("no u");
+            messages.push("https://youtu.be/LR851d7QYco");
     }
 
-    if(cmd.includes("dab")){
+    if(words.includes("dab")){
         var dabArray = [
             "http://media3.s-nbcnews.com/i/newscms/2016_05/964556/betty-white-dab-today-tease-160207_288cb9587f95446b9a1fdfacaf1cbbdc.jpg",
             "https://thumb1.shutterstock.com/display_pic_with_logo/982847/529621960/stock-photo-guy-making-dab-529621960.jpg",
@@ -255,11 +266,11 @@ client.on("message", async message => {
 
     if(cmd.includes("dad bot")){ messages.push("Dad butt sucks, I am superior! My memes are litter! By that I mean they're trash."); }
 
-    if(cmd.includes("cancer")){ messages.push("DID SOMEONE CALL FOR CANCER!?!?!?!?"); }
+    if(words.includes("cancer")){ messages.push("DID SOMEONE CALL FOR CANCER!?!?!?!?"); }
 
-    if(cmd.includes("discord")){ messages.push("Skype is better ( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)"); }
+    if(words.includes("discord")){ messages.push("Skype is better ( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)"); }
 
-    if(cmd.includes("women") || cmd.includes("woman") || cmd.includes("girl")){ messages.push("https://pics.me.me/hippity-hoppity-women-are-property-22956754.png"); }
+    if(words.includes("women") || words.includes("woman") || words.includes("girl")){ messages.push("https://pics.me.me/hippity-hoppity-women-are-property-22956754.png"); }
 
     if(stfu == true && messages.length > 0){
         message.channel.send("my dad told me to stfu, I'm in timeout");
@@ -270,7 +281,8 @@ client.on("message", async message => {
         "u tryna spam m8??? I can be the only cancer cell bitch",
         "stop fucking spamming",
         "stop u stupid little shit",
-        "no"
+        "no",
+        "I will come over to your house and do nothing because I'm a bot and I don't exist"
     ], antiSpamMessage = antiSpamMessages[antiSpamMessages.length * Math.random() << 0];
     if(messages.length > 3){
         message.channel.send(antiSpamMessage);
