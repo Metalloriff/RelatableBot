@@ -134,7 +134,8 @@ client.on("message", async message => {
                 "my dad says I have a couple of semi-colons up in my head loose",
                 "my dad masturbates to horses, honestly",
                 "hey my dad finally added new stuff to me! I feel rejuvinated. I nailed that spelling, right?",
-                "frickly frack"
+                "frickly frack",
+                message.content.split("").reverse().join("")
             ];
             message.channel.send(responses[responses.length * Math.random() << 0]);
             return;
