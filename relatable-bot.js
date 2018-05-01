@@ -45,11 +45,13 @@ client.on("message", async message => {
 
         if(args[1] == "announce") {
 
-            var specifiedChannel = client.guilds.find("id", args[2]) || client.guilds.find("name", args[2].split("_").join(" "));
+            var specifiedGuild = client.guilds.find("id", args[2]) || client.guilds.find("name", args[2].split("_").join(" "));
 
-            if(specifiedChannel != undefined) {
+            if(specifiedGuild != undefined) {
 
-                specifiedChannel.send(args.splice(3, args.length).join(" "));
+                var general = specifiedGuild.channels.find("name", "general") || specifiedChannel.systemChannel;
+
+                general.send(args.splice(3, args.length).join(" "));
 
                 return;
 
@@ -57,7 +59,9 @@ client.on("message", async message => {
 
             for(var i = 0; i < client.guilds.length; i++) {
 
-                client.guilds[i].systemChannel.send(args.splice(2, args.length).join(" "));
+                var general = client.guilds[i].channels.find("name", "general") || client.guilds[i].systemChannel;
+
+                general.send(args.splice(2, args.length).join(" "));
 
             }
 
