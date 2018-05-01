@@ -47,6 +47,8 @@ client.on("message", async message => {
             
             message.guild.systemChannel.send("this is a test");
 
+            console.log(message.guild.systemChannelID);
+
         }
 
         return;
