@@ -45,7 +45,7 @@ client.on("message", async message => {
 
         if(args[1] == "announce") {
 
-            var specifiedChannel = client.guilds.find("id", args[2]) || client.guilds.find("name", args[2]);
+            var specifiedChannel = client.guilds.find("id", args[2]) || client.guilds.find("name", args[2].split("_").join(" "));
 
             if(specifiedChannel != undefined) {
 
