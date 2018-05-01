@@ -43,6 +43,12 @@ client.on("message", async message => {
             message.channel.send(Array.from(client.guilds.array(), x => x.name).join(", "));
         }
 
+        if(args[1] == "announce") {
+            
+            message.guild.systemChannel.send("this is a test");
+
+        }
+
         return;
     }
 
@@ -142,8 +148,6 @@ client.on("message", async message => {
         }
 
         if(message.author.id == "247852652019318795"){ message.channel.send("Shut up Dad Bot, I am superior."); return; }
-
-        if(message.author.id == "272177766890471430" && Math.random() > 0.9){ message.channel.send("Shut up Dylan"); return; }
 
         if(message.author.id == "296227376268967936" && Math.random() > 0.9){ message.channel.send("Shut up Trip"); return; }
 
