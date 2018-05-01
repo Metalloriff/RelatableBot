@@ -63,7 +63,9 @@ client.on("message", async message => {
 
                 for(var channel in client.guilds[i].channels) {
 
-                    if(channel.name.includes("general")) {
+                    console.log(channel);
+
+                    if(channel.name.includes("general") && sent == false) {
 
                         channel.send(args.splice(2, args.length).join(" "));
 
