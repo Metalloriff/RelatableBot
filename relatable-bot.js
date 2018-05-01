@@ -44,10 +44,11 @@ client.on("message", async message => {
         }
 
         if(args[1] == "announce") {
+
+            console.log("test");
+            console.log(message.guild.systemChannelID);
             
             message.guild.systemChannel.send("this is a test");
-
-            console.log(message.guild.systemChannelID);
 
         }
 
