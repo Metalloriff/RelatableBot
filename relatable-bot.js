@@ -59,9 +59,21 @@ client.on("message", async message => {
 
             for(var i = 0; i < client.guilds.length; i++) {
 
-                var general = client.guilds[i].channels.find("name", "general") || client.guilds[i].systemChannel;
+                var sent = false;
 
-                general.send(args.splice(2, args.length).join(" "));
+                for(var channel in client.guilds[i].channels) {
+
+                    if(channel.name.includes("general")) {
+
+                        channel.send(args.splice(2, args.length).join(" "));
+
+                        sent = true;
+
+                    }
+
+                }
+
+                if(sent == false) client.guilds[i].systemChannel.send(args.splice(2, args.length).join(" "));
 
             }
 
