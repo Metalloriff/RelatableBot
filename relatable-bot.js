@@ -45,10 +45,21 @@ client.on("message", async message => {
 
         if(args[1] == "announce") {
 
-            console.log("test");
-            console.log(message.guild.systemChannelID);
-            
-            message.guild.systemChannel.send("this is a test");
+            var specifiedChannel = client.guilds.find("id", args[2]) || client.guilds.find("name", args[2]);
+
+            if(specifiedChannel != undefined) {
+
+                specifiedChannel.send(args.splice(3, args.length).join(" "));
+
+                return;
+
+            }
+
+            for(var i = 0; i < client.guilds.length; i++) {
+
+                client.guilds[i].systemChannel.send(args.splice(2, args.length).join(" "));
+
+            }
 
         }
 
