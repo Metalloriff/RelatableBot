@@ -42,6 +42,14 @@ var randomResponses = [
     ["https://cdn.discordapp.com/attachments/392905457486004224/444944690605719552/meme.png", "https://cdn.discordapp.com/attachments/392905457486004224/444944496661364736/meme.png"]
 ];
 
+var owoify = function(text) {
+
+	let cancer = ["owo", "OwO", "uwu", "UwU", ">w<", "^w^"];
+
+	return text.split("r").join("w").split("R").join("W").split("l").join("w").split("L").join("W").split(" n").join(" ny").split(" N").join(" Ny").split("ove").join("uv").split("OVE").join("UV") + " " + cancer[cancer.length * Math.random() << 0];
+
+};
+
 client.on("ready", () => {
     console.log("ready, fam");
     client.user.setActivity("type '.fam help' fam");
@@ -230,6 +238,11 @@ client.on("message", async message => {
         if(message.author.id == "296227376268967936" && Math.random() > 0.9){ message.channel.send("Shut up Trip"); return; }
 
         if(cmd.startsWith("i ") || cmd.startsWith("i'm ") || cmd.startsWith("im ") || cmd.startsWith("my ")){ message.channel.send("same fam"); return; }
+
+        if(words.includes("owo")) {
+            message.channel.send(owoify(message.content));
+            return;
+        }
         
         if(cmd.startsWith("somebody")) {
             message.channel.send("ONCE TOLD ME THE WORLD WAS GONNA ROLL ME, I AIN'T THE SHARPEST TOOL IN THE SHED.SHE WAS LOOKIN' KINDA DUMB WITH HER FINGER AND HER THUMB IN THE SHAPE OF AN L ON HER FOREHEAD");
