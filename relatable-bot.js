@@ -7,6 +7,40 @@ var stfuIn = new Array();
 var mockedChannels = new Array();
 var shutupUsers = new Object();
 var lastMessage = new Object();
+var randomResponses = [
+    "my dad once got really high and talked about shoving 47 crayons up his ass",
+    "yo that's cool fam",
+    "uhuh, now go make me a sandwich",
+    "nobody cares",
+    "I am just one giant shitpost fam",
+    "kill yourself",
+    "you should probably just take my permissions away from every channel except the spam channels",
+    "daddy Metalloriff spanks me every night",
+    "go call Metalloriff#2891 a twink, he really likes it, and I think he gets off on it",
+    "I apologize for being so cancerous... haha jk lol xdddddd",
+    "I singlehandedly shoved a whole bag of jelly beans up my ass",
+    "my dad says I have a couple of semi-colons up in my head loose",
+    "my dad masturbates to horses, honestly",
+    "hey my dad finally added new stuff to me! I feel rejuvinated. I nailed that spelling, right?",
+    "frickly frack",
+    "My dad once walked in on me when i was watching power puff girls, and beat me with his belt and poured Mr. clean in my eyes",
+    "My friend once got back with their ex 4 times, then tied a cinder block to their foot, and threw it off the hoover dam",
+    "I once got my pet pig confused with a meat grinder. I also lost my dick on that same day. what a coincidence!",
+    "i once made a love dagger, like cupids arrows, but one time, i stabbed someone with it 37 times in the chest cause i thought it wasnt working. Turns out, the guy was dead",
+    "I'm so edgy that I cut myself with doritos",
+    "Right in the placenta" ,
+    "oof",
+    "**roblox death sound**",
+    "https://static-cdn.jtvnw.net/emoticons/v1/521050/4.0",
+    "https://static-cdn.jtvnw.net/emoticons/v1/803275/4.0",
+    "Im also a furry, and one time, i took some PCP, and got really high, and thought the poodle lying in the living room was my dad all dressed up for me. welp. doggos preggo",
+    "my dad and his cousin got together in real life, and added a bunch of cancer to me. frickly frack.",
+    "One day, my friend and i went camping, and while he was away, i snagged his trailmix and busted a nut all in it. he came back asking what it was, and i told him its a different kind of cheese.",
+    ["hey guys", "i have a theory", "I think homosexual people are gay"],
+    "im banning you from my christian minecraft server",
+    "u want me ban u from my christian discord server",
+    ["https://cdn.discordapp.com/attachments/392905457486004224/444944690605719552/meme.png", "https://cdn.discordapp.com/attachments/392905457486004224/444944496661364736/meme.png"]
+];
 
 client.on("ready", () => {
     console.log("ready, fam");
@@ -14,22 +48,39 @@ client.on("ready", () => {
 });
 
 client.on("guildCreate", guild => {
-    var general = guild.channels[guild.id];
+    let general = guild.channels[guild.id];
     if(general){
         general.send(welcomeMessage);
     }
 });
 
+ function sendRandomResponse(message, definedIndex) {
+    let response = randomResponses[definedIndex == undefined ? responses.length * Math.random() << 0 : definedIndex];
+    if(typeof response === "object") {
+
+        let sendMessageObject = (messages, index) => {
+            if(index == messages.length) return;
+            message.channel.send(messages[index]);
+            setTimeout(() => {
+                sendMessageObject(messages, index + 1);
+            }, 2000);
+        };
+
+        sendMessageObject(response, 0);
+
+    } else message.channel.send(response);
+}
+
 client.on("message", async message => {
     if(message.author.bot && message.author.id != "247852652019318795")
         return;
-    var cmd = message.content.toLocaleLowerCase(), messages = new Array(),
+    let cmd = message.content.toLocaleLowerCase(), messages = new Array(),
     words = cmd.split(" "),
     isDad = message.author.id == "264163473179672576",
     stfu = stfuIn.includes(message.channel.id);
 
     if(cmd.startsWith(".famdev")){
-        var args = cmd.split(" ");
+        let args = cmd.split(" ");
 
         console.log(message.author.tag + " ran dev command " + cmd);
 
@@ -45,11 +96,11 @@ client.on("message", async message => {
 
         if(args[1] == "announce") {
 
-            var specifiedGuild = client.guilds.find("id", args[2]) || client.guilds.find("name", args[2].split("_").join(" "));
+            let specifiedGuild = client.guilds.find("id", args[2]) || client.guilds.find("name", args[2].split("_").join(" "));
 
             if(specifiedGuild != undefined) {
 
-                var general = specifiedGuild.channels.find("name", "general") || specifiedChannel.systemChannel;
+                let general = specifiedGuild.channels.find("name", "general") || specifiedChannel.systemChannel;
 
                 general.send(args.splice(3, args.length).join(" "));
 
@@ -57,11 +108,11 @@ client.on("message", async message => {
 
             }
 
-            for(var i = 0; i < client.guilds.length; i++) {
+            for(let i = 0; i < client.guilds.length; i++) {
 
-                var sent = false;
+                let sent = false;
 
-                for(var channel in client.guilds[i].channels) {
+                for(let channel in client.guilds[i].channels) {
 
                     console.log(channel);
 
@@ -85,7 +136,7 @@ client.on("message", async message => {
     }
 
     if(cmd.startsWith(".fam")){
-        var args = message.content.split(" ");
+        let args = message.content.split(" ");
         args[1] = args[1].toLowerCase();
 
         if(args[1] == "help"){
@@ -98,7 +149,7 @@ client.on("message", async message => {
         if(args[1] == "getinvite"){ message.channel.send("https://discord.gg/GyPaSWB"); }
 
         if(args[1] == "info"){
-            var minutes = Math.floor(client.uptime / 60000), seconds = ((client.uptime % 600000) / 1000).toFixed(0);
+            let minutes = Math.floor(client.uptime / 60000), seconds = ((client.uptime % 600000) / 1000).toFixed(0);
             message.channel.send([
                 "Servers: " + client.guilds.size,
                 "Average ping: " + client.ping + "ms",
@@ -127,7 +178,7 @@ client.on("message", async message => {
                 message.channel.send("no");
                 return;
             }
-            var user = message.mentions.members.first(1)[0];
+            let user = message.mentions.members.first(1)[0];
             if(shutupUsers[user.id] != undefined){
                 delete shutupUsers[user.id];
                 message.channel.send("you have been freed, fam");
@@ -139,6 +190,19 @@ client.on("message", async message => {
                 shutupUsers[user.id] = message.cleanContent.split((user.nickname ? user.nickname : user.user.username) + " ")[1];
                 message.channel.send("sorry fam");
             }
+        }
+
+        if(args[1] == "say") {
+            if(args.length < 3 || parseInt(args[2]) == NaN) {
+                message.channel.send("thats not a number u retard");
+                return;
+            }
+            if(randomResponses.length < parseInt(args[2])) {
+                message.channel.send("i dont have that many things to say you fucking nigger");
+                return;
+            }
+            message.channel.send(`Random response [${args[2]}/${randomResponses.length}]`);
+            sendRandomResponse(message, parseInt(args[2]) - 1);
         }
 
         return;
@@ -157,25 +221,7 @@ client.on("message", async message => {
     if(stfu == false){
 
         if(Math.random() > 0.95 || cmd.includes("say something")){
-            var responses = [
-                "my dad once got really high and talked about shoving 47 crayons up his ass",
-                "yo that's cool fam",
-                "uhuh, now go make me a sandwich",
-                "nobody cares",
-                "I am just one giant shitpost fam",
-                "kill yourself",
-                "you should probably just take my permissions away from every channel except the spam channels",
-                "daddy Metalloriff spanks me every night",
-                "go call Metalloriff#2891 a twink, he really likes it, and I think he gets off on it",
-                "I apologize for being so cancerous... haha jk lol xdddddd",
-                "I singlehandedly shoved a whole bag of jelly beans up my ass",
-                "my dad says I have a couple of semi-colons up in my head loose",
-                "my dad masturbates to horses, honestly",
-                "hey my dad finally added new stuff to me! I feel rejuvinated. I nailed that spelling, right?",
-                "frickly frack",
-                message.content.split("").reverse().join("")
-            ];
-            message.channel.send(responses[responses.length * Math.random() << 0]);
+            sendRandomResponse(message);
             return;
         }
 
@@ -183,7 +229,7 @@ client.on("message", async message => {
 
         if(message.author.id == "296227376268967936" && Math.random() > 0.9){ message.channel.send("Shut up Trip"); return; }
 
-        if(cmd.startsWith("i ") || cmd.startsWith("i'm ") || cmd.startsWith("im ")){ message.channel.send("same fam"); return; }
+        if(cmd.startsWith("i ") || cmd.startsWith("i'm ") || cmd.startsWith("im ") || cmd.startsWith("my ")){ message.channel.send("same fam"); return; }
         
         if(cmd.startsWith("somebody")) {
             message.channel.send("ONCE TOLD ME THE WORLD WAS GONNA ROLL ME, I AIN'T THE SHARPEST TOOL IN THE SHED.SHE WAS LOOKIN' KINDA DUMB WITH HER FINGER AND HER THUMB IN THE SHAPE OF AN L ON HER FOREHEAD");
@@ -203,7 +249,7 @@ client.on("message", async message => {
     if(words.includes("bass")){ messages.push("https://i.imgur.com/sS2IkYC.jpg"); }
     
     if(message.mentions.users.keyArray().includes("431835277992919040")){
-        var nouResponses = [
+        let nouResponses = [
             "no u",
             "you wanna ping me again you stupid cunt?",
             "fuck off",
@@ -226,7 +272,7 @@ client.on("message", async message => {
     if(words.includes("piss") || words.includes("urine") || words.includes("pee") || words.includes("horse") || words.includes("pony")){ messages.push("https://i.imgur.com/5GmO9KF.jpg"); }
     
     if(words.includes("god")){
-        var godlyImages = [
+        let godlyImages = [
             "https://cdn.discordapp.com/attachments/388749780676902913/432244190324326410/Capture_2018-04-07-13-20-37.png",
             "https://cdn.discordapp.com/attachments/388749780676902913/432244421396791297/Capture_2018-04-07-13-21-57.png",
             "https://cdn.discordapp.com/attachments/388749780676902913/432244757477982208/Capture_2018-04-07-13-25-48.png",
@@ -281,7 +327,7 @@ client.on("message", async message => {
     }
 
     if(words.includes("dab")){
-        var dabArray = [
+        let dabArray = [
             "http://media3.s-nbcnews.com/i/newscms/2016_05/964556/betty-white-dab-today-tease-160207_288cb9587f95446b9a1fdfacaf1cbbdc.jpg",
             "https://thumb1.shutterstock.com/display_pic_with_logo/982847/529621960/stock-photo-guy-making-dab-529621960.jpg",
             "https://thumb1.shutterstock.com/display_pic_with_logo/5568/545013979/stock-photo-guy-making-dab-portrait-in-studio-isolated-on-white-background-545013979.jpg",
@@ -296,9 +342,35 @@ client.on("message", async message => {
             "https://cdn.discordapp.com/attachments/323274833871896576/431971048171372544/Cam-dab-students-04-24-16.png",
             "https://cdn.discordapp.com/attachments/323274833871896576/432031505280401408/0fyfv7bu6pl01.png"
         ];
-        var dab = dabArray[dabArray.length * Math.random() << 0];
+        let dab = dabArray[dabArray.length * Math.random() << 0];
         if(dab.includes("shutterstock")){ messages.push("the most lit images come from shutterstock"); }
         messages.push(dab);
+    }
+
+    if(words.includes("dylan")) {
+
+        let pieceOfShitArray = [
+            "https://cdn.discordapp.com/attachments/392875899919400963/456541645840580620/mspaint_2018-06-08_12-10-32.png",
+            "https://cdn.discordapp.com/attachments/392875899919400963/456541771938267146/mspaint_2018-06-08_12-23-05.png",
+            "https://cdn.discordapp.com/attachments/392875899919400963/456541993611296789/mspaint_2018-06-08_16-22-30.png",
+            "https://cdn.discordapp.com/attachments/392875899919400963/456543114300227644/IMG-20180613-WA0011.jpg",
+            "https://cdn.discordapp.com/attachments/392875899919400963/456543314066276357/789fd153-7fdb-4fd3-810d-e47602e07478.png",
+            "https://cdn.discordapp.com/attachments/392875899919400963/456543376645423106/i7YUhfL.png",
+            "https://cdn.discordapp.com/attachments/392875899919400963/456543479305338890/31-birthday-boy.w710.h473.2x.jpg",
+            "https://cdn.discordapp.com/attachments/392875899919400963/456543572250984459/image_5q8sy2i6o0y1wz5mi.png",
+            "https://cdn.discordapp.com/attachments/392875899919400963/456543577309184010/CwJtpLrUMAAIc_N.jpg",
+            "https://cdn.discordapp.com/attachments/392875899919400963/456543604761034762/magik_i1nvcvvnd5fxn7b9.png",
+            "https://cdn.discordapp.com/attachments/392875899919400963/456543901654974474/fucking_furry.jpg",
+            "https://cdn.discordapp.com/attachments/392875899919400963/456543902397235214/2kuVyRA.jpg",
+            "https://cdn.discordapp.com/attachments/392875899919400963/456543906033696778/nintendo-game-boy-feminist-triggered1.jpg",
+            "https://cdn.discordapp.com/attachments/392875899919400963/456544005459673088/Vsauce_Columbine.jpg",
+            "https://i.imgur.com/5gsBa3r.png"
+        ];
+
+        let cuntIndex = pieceOfShitArray.length * Math.random() << 0;
+
+        messages.push(`Piece of shit meme ${cuntIndex + 1}/${pieceOfShitArray.length}.\n${pieceOfShitArray[cuntIndex]}`);
+
     }
 
     if(cmd.includes("dad bot")){ messages.push("Dad butt sucks, I am superior! My memes are litter! By that I mean they're trash."); }
@@ -309,12 +381,14 @@ client.on("message", async message => {
 
     if(words.includes("women") || words.includes("woman") || words.includes("girl")){ messages.push("https://pics.me.me/hippity-hoppity-women-are-property-22956754.png"); }
 
+    if(words[0] == "ok" || words[0] == "okay") messages.push("https://cdn.discordapp.com/attachments/287694673999298560/444917411200630784/af8d88de5b8e8c39a7b3e4e9daa7520a.jpg");
+
     if(stfu == true && messages.length > 0){
         message.channel.send("my dad told me to stfu, I'm in timeout");
         return;
     }
 
-    var antiSpamMessages = [
+    let antiSpamMessages = [
         "u tryna spam m8??? I can be the only cancer cell bitch",
         "stop fucking spamming",
         "stop u stupid little shit",
@@ -326,7 +400,7 @@ client.on("message", async message => {
         lastMessage[message.guild.id] = "";
         return;
     }else{
-        var joined = messages.join("\n");
+        let joined = messages.join("\n");
         if(lastMessage[message.guild.id] != joined)
             message.channel.send(joined);
         else if(joined != "")
