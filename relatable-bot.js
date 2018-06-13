@@ -83,7 +83,7 @@ client.on("message", async message => {
     if(message.author.bot && message.author.id != "247852652019318795")
         return;
     let cmd = message.content.toLocaleLowerCase(), messages = new Array(),
-    words = cmd.replace(/[^a-zA-Z-]/g, "").split(" "),
+    words = cmd.replace(/[^a-z A-Z-]/g, "").split(" "),
     isDad = message.author.id == "264163473179672576",
     stfu = stfuIn.includes(message.channel.id);
 
