@@ -257,7 +257,10 @@ client.on("message", async message => {
 
     }
     
-    if(words.includes("heck") || words.includes("frick")){ messages.push("https://i.imgur.com/3DC8fcH.jpg"); }
+    if(words.includes("heck") || words.includes("frick")){
+        if(lastMessage[message.guild.id] == "https://i.imgur.com/3DC8fcH.jpg") messages.push("https://cdn.discordapp.com/attachments/392905457486004224/459077710380269588/meme.png");
+        else messages.push("https://i.imgur.com/3DC8fcH.jpg");
+    }
     
     if(words.includes("bass")){ messages.push("https://i.imgur.com/sS2IkYC.jpg"); }
     
