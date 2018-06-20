@@ -3,10 +3,10 @@ const client = new Discord.Client();
 const fs = require("fs");
 const sql = require("sqlite");
 const welcomeMessage = "Hello, I'm ``Relatable Bot``, but you can call me **PURE FUCKING CANCER**. :smiley:\n\nFirst thing's first, I highly recommend taking away my permissions everywhere except for the spam channels, shitposting channels, and bot command channels, because I'm an annoying, obnoxious little shit that will quickly turn any chat into one big shitpost.\n\nSecondly, use ``.fam help`` to view my trigger words and commands.\n\nThat is my introduction, fam, I hope to make your life a miserable hell. **dab**";
-var stfuIn = new Array();
-var mockedChannels = new Array();
-var shutupUsers = new Object();
-var lastMessage = new Object();
+var stfuIn = [];
+var mockedChannels = [];
+var shutupUsers = {};
+var lastMessage = {};
 var randomResponses = [
     "my dad once got really high and talked about shoving 47 crayons up his ass",
     "yo that's cool fam",
@@ -258,7 +258,10 @@ client.on("message", async message => {
     }
     
     if(words.includes("heck") || words.includes("frick")){
-        if(lastMessage[message.guild.id] == "https://i.imgur.com/3DC8fcH.jpg") messages.push("https://cdn.discordapp.com/attachments/392905457486004224/459077710380269588/meme.png");
+        let p1 = "https://i.imgur.com/3DC8fcH.jpg", p2 = "https://cdn.discordapp.com/attachments/392905457486004224/459077710380269588/meme.png", p3 = "https://cdn.discordapp.com/attachments/392905457486004224/459082345996222464/meme.png", p4 = "https://cdn.discordapp.com/attachments/392905457486004224/459082501864816682/meme.png";
+        if(lastMessage[message.guild.id] == p1) messages.push(p2);
+        else if(lastMessage[message.guild.id] == p2) messages.push(p3);
+        else if(lastMessage[message.guild.id] == p3) messages.push(p4);
         else messages.push("https://i.imgur.com/3DC8fcH.jpg");
     }
     
