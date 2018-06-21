@@ -3,11 +3,11 @@ const client = new Discord.Client();
 const fs = require("fs");
 const sql = require("sqlite");
 const welcomeMessage = "Hello, I'm ``Relatable Bot``, but you can call me **PURE FUCKING CANCER**. :smiley:\n\nFirst thing's first, I highly recommend taking away my permissions everywhere except for the spam channels, shitposting channels, and bot command channels, because I'm an annoying, obnoxious little shit that will quickly turn any chat into one big shitpost.\n\nSecondly, use ``.fam help`` to view my trigger words and commands.\n\nThat is my introduction, fam, I hope to make your life a miserable hell. **dab**";
-var stfuIn = [];
-var mockedChannels = [];
-var shutupUsers = {};
-var lastMessage = {};
-var randomResponses = [
+let stfuIn = [];
+let mockedChannels = [];
+let shutupUsers = {};
+let lastMessage = {};
+const randomResponses = [
     "my dad once got really high and talked about shoving 47 crayons up his ass",
     "yo that's cool fam",
     "uhuh, now go make me a sandwich",
@@ -63,7 +63,7 @@ client.on("guildCreate", guild => {
 });
 
  function sendRandomResponse(message, definedIndex) {
-    let response = randomResponses[definedIndex == undefined ? responses.length * Math.random() << 0 : definedIndex];
+    let response = randomResponses[definedIndex ? definedIndex : randomResponses.length * Math.random() << 0];
     if(typeof response === "object") {
 
         let sendMessageObject = (messages, index) => {
@@ -206,7 +206,7 @@ client.on("message", async message => {
                 return;
             }
             if(randomResponses.length < parseInt(args[2])) {
-                message.channel.send("i dont have that many things to say you fucking nigger");
+                message.channel.send("i dont have that many things to say you fuck");
                 return;
             }
             message.channel.send(`Random response [${args[2]}/${randomResponses.length}]`);
@@ -247,6 +247,30 @@ client.on("message", async message => {
         if(cmd.startsWith("somebody")) {
             message.channel.send("ONCE TOLD ME THE WORLD WAS GONNA ROLL ME, I AIN'T THE SHARPEST TOOL IN THE SHED.SHE WAS LOOKIN' KINDA DUMB WITH HER FINGER AND HER THUMB IN THE SHAPE OF AN L ON HER FOREHEAD");
             return;
+        }
+
+        if(cmd.includes("where are you")) {
+            let kms = [
+                "AND OIM SO SOURRY",
+                "I CANNOT SLEEP, I CANNOT DREAM TONOIT",
+                "I NEED SOMEBODY AND ALWAYS",
+                "THIS SICK, STRANGE DARKNESS",
+                "COMES CREEPING ON SO HAUNTING EVERYTOIM",
+                "AND AS I STARED I COUNTED",
+                "THE WEBS FROM ALL THE SPOIDERS",
+                "CATCHIGN THINGS AND EATING THEIR INSIDES",
+                "LIKE INDECISION TO CALL YOOO",
+                "AND HEAR YOUR VOICE OF TREASON",
+                "WILL YOU COME HOME AND STOP THIS PAIN TONOIT",
+                "STOP THIS PAIN TONOIT"
+            ];
+            message.channel.startTyping();
+            let next = i => {
+                message.channel.send(kms[i]);
+                if(i < kms.length) setTimeout(() => next(i + 1), 1500);
+                else message.channel.stopTyping(true);
+            };
+            next(0);
         }
 
         if(cmd.includes("useless bot")){
