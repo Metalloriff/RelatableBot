@@ -42,7 +42,7 @@ const randomResponses = [
     ["https://cdn.discordapp.com/attachments/392905457486004224/444944690605719552/meme.png", "https://cdn.discordapp.com/attachments/392905457486004224/444944496661364736/meme.png"]
 ];
 
-var owoify = function(text) {
+const owoify = function(text) {
 
 	let cancer = ["owo", "OwO", "uwu", "UwU", ">w<", "^w^"];
 
@@ -82,7 +82,7 @@ client.on("guildCreate", guild => {
 client.on("message", async message => {
     if(message.author.bot && message.author.id != "247852652019318795")
         return;
-    let cmd = message.content.toLowerCase(), messages = new Array(),
+    let cmd = message.content.toLowerCase(), messages = [],
     words = cmd.replace(/[^a-z A-Z-]/g, "").split(" "),
     isDad = message.author.id == "264163473179672576",
     stfu = stfuIn.includes(message.channel.id);
@@ -267,7 +267,7 @@ client.on("message", async message => {
             message.channel.startTyping();
             let next = i => {
                 message.channel.send(kms[i]);
-                if(i < kms.length) setTimeout(() => next(i + 1), 1500);
+                if(i < kms.length) setTimeout(() => next(i + 1), 2000);
                 else message.channel.stopTyping(true);
             };
             next(0);
