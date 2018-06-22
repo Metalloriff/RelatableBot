@@ -221,6 +221,8 @@ client.on("message", async message => {
             if(dmedUsers.indexOf(args[2]) == -1) dmedUsers.push(args[2]);
         }
 
+        if(args[1] == "closedm") dmedUsers.splice(dmedUsers.indexOf(args[2]), 1);
+
         if(args[1] == "messagechannel" || args[1] == "sendmessage") return;
 
         return;
