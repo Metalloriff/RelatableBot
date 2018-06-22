@@ -287,7 +287,7 @@ client.on("message", async message => {
         }
 
         if(args[1] == "suggest") {
-            client.fetchUser("264163473179672576").then(dad => dad.dmChannel.sendMessage(`<@${message.author.id}> suggested: ${args.slice(1, args.length).join(" ")}`));
+            client.fetchUser("264163473179672576").then(dad => dad.sendMessage(`<@${message.author.id}> suggested: ${args.slice(1, args.length).join(" ")}`));
         }
 
         return;
