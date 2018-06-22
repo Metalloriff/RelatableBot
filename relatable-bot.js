@@ -7,7 +7,7 @@ let stfuIn = [];
 let mockedChannels = [];
 let shutupUsers = {};
 let lastMessage = {};
-let dmedUsers = [];
+let dmedUsers = ["272177766890471430"];
 const randomResponses = [
     "my dad once got really high and talked about shoving 47 crayons up his ass",
     "yo that's cool fam",
@@ -476,7 +476,7 @@ client.on("message", async message => {
 });
 
 client.on("channelCreate", channel => {
-    channel.send("first!");
+    if(channel.guild) channel.send("first!");
 });
 
 client.on("typingStart", (channel, user) => {
