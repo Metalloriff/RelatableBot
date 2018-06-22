@@ -41,6 +41,79 @@ const randomResponses = [
     "u want me ban u from my christian discord server",
     ["https://cdn.discordapp.com/attachments/392905457486004224/444944690605719552/meme.png", "https://cdn.discordapp.com/attachments/392905457486004224/444944496661364736/meme.png"]
 ];
+const questionResponses = [
+
+];
+const godlyImages = [
+    "https://cdn.discordapp.com/attachments/388749780676902913/432244190324326410/Capture_2018-04-07-13-20-37.png",
+    "https://cdn.discordapp.com/attachments/388749780676902913/432244421396791297/Capture_2018-04-07-13-21-57.png",
+    "https://cdn.discordapp.com/attachments/388749780676902913/432244757477982208/Capture_2018-04-07-13-25-48.png",
+    "https://media.discordapp.net/attachments/406492136410972170/409752493891911681/what_am_I_doing_with_my_life.gif",
+    "https://cdn.discordapp.com/attachments/388749780676902913/432245166837858314/Capture_2018-04-07-13-27-38.png",
+    "https://cdn.discordapp.com/attachments/388749780676902913/432245301441462272/no_means_no.jpg",
+    "https://cdn.discordapp.com/attachments/388749780676902913/432245380881842176/magik2.jpg",
+    "https://cdn.discordapp.com/attachments/388749780676902913/432245387169103878/magik1.jpg",
+    "https://cdn.discordapp.com/attachments/388749780676902913/432245504647233536/Capture_2018-04-07-13-29-06.png",
+    "https://cdn.discordapp.com/attachments/388749780676902913/432245682938839041/every_day_i_sit_and_wonder_why_am_i_still_alive_why_am_i_still_here_what_is_the_meaning_of_life.jpg",
+    "https://cdn.discordapp.com/attachments/388749780676902913/432245767642546185/ApplicationFrameHost_2018-03-16_15-58-53.jpg",
+    "https://cdn.discordapp.com/attachments/388749780676902913/432245780192034826/firefox_2018-03-04_21-40-43.jpg",
+    "https://cdn.discordapp.com/attachments/388749780676902913/432245797942198284/ritz.jpg",
+    "https://cdn.discordapp.com/attachments/388749780676902913/432245804552421387/wut_is_this.png",
+    "https://cdn.discordapp.com/attachments/388749780676902913/432245821497409547/U1hweJJ.jpg",
+    "https://cdn.discordapp.com/attachments/388749780676902913/432245983930220566/firefox_2017-09-14_09-33-37.png",
+    "https://cdn.discordapp.com/attachments/388749780676902913/432245990699827220/orgasm.jpg",
+    "https://cdn.discordapp.com/attachments/388749780676902913/432246034287165445/drunk-ass_max.jpg",
+    "https://cdn.discordapp.com/attachments/388749780676902913/432246093867253760/Trips_Child.jpg",
+    "https://cdn.discordapp.com/attachments/388749780676902913/432246131456737310/mouse_trap_guy.png",
+    "https://cdn.discordapp.com/attachments/388749780676902913/432246328370659328/god.gif",
+    "https://cdn.discordapp.com/attachments/388749780676902913/432246551880925184/hwat.gif",
+    "https://cdn.discordapp.com/attachments/388749780676902913/432246816390512640/beenurdotpng.png",
+    "https://cdn.discordapp.com/attachments/392905457486004224/432375319220060162/Capture_2018-04-07-22-04-58.png",
+    "https://cdn.discordapp.com/attachments/388749780676902913/432376368215490560/Capture_2018-04-07-22-09-07.png",
+    "https://cdn.discordapp.com/attachments/388749780676902913/432380196339974144/Capture_2018-04-07-22-23-50.png",
+    "https://cdn.discordapp.com/attachments/388749780676902913/433432881306533908/Screenshot_218.png",
+    "https://cdn.discordapp.com/attachments/388749780676902913/434519532506447895/Capture_2018-04-13-20-04-50.png"
+];
+const dabArray = [
+    "http://media3.s-nbcnews.com/i/newscms/2016_05/964556/betty-white-dab-today-tease-160207_288cb9587f95446b9a1fdfacaf1cbbdc.jpg",
+    "https://thumb1.shutterstock.com/display_pic_with_logo/982847/529621960/stock-photo-guy-making-dab-529621960.jpg",
+    "https://thumb1.shutterstock.com/display_pic_with_logo/5568/545013979/stock-photo-guy-making-dab-portrait-in-studio-isolated-on-white-background-545013979.jpg",
+    "https://thumb9.shutterstock.com/display_pic_with_logo/1457387/576988528/stock-photo-photo-of-a-lady-dabbing-wearing-a-denim-shirt-in-a-white-background-576988528.jpg",
+    "https://thumb9.shutterstock.com/display_pic_with_logo/186979858/1059886088/stock-vector-dabbing-unicorn-with-stars-1059886088.jpg",
+    "https://thumb9.shutterstock.com/display_pic_with_logo/2187713/558930085/stock-photo-guy-making-dab-dance-558930085.jpg",
+    "https://thumb1.shutterstock.com/display_pic_with_logo/516562/537941173/stock-photo-santa-claus-dab-dabbing-isolated-on-white-background-537941173.jpg",
+    "https://thumb1.shutterstock.com/display_pic_with_logo/982847/532110253/stock-photo-guy-making-dab-532110253.jpg",
+    "https://thumb1.shutterstock.com/display_pic_with_logo/189250772/776509873/stock-photo-father-and-daughter-doing-dab-on-the-pier-776509873.jpg",
+    "https://thumb1.shutterstock.com/display_pic_with_logo/1237180/696084196/stock-photo-senior-and-young-woman-making-dab-dance-outdoors-by-sea-pier-696084196.jpg",
+    "https://thumb1.shutterstock.com/display_pic_with_logo/170141892/728777236/stock-photo-young-man-makes-a-dab-or-flex-it-s-dance-move-on-white-background-728777236.jpg",
+    "https://cdn.discordapp.com/attachments/323274833871896576/431971048171372544/Cam-dab-students-04-24-16.png",
+    "https://cdn.discordapp.com/attachments/323274833871896576/432031505280401408/0fyfv7bu6pl01.png"
+];
+const pieceOfShitArray = [
+    "https://cdn.discordapp.com/attachments/392875899919400963/456541645840580620/mspaint_2018-06-08_12-10-32.png",
+    "https://cdn.discordapp.com/attachments/392875899919400963/456541771938267146/mspaint_2018-06-08_12-23-05.png",
+    "https://cdn.discordapp.com/attachments/392875899919400963/456541993611296789/mspaint_2018-06-08_16-22-30.png",
+    "https://cdn.discordapp.com/attachments/392875899919400963/456543114300227644/IMG-20180613-WA0011.jpg",
+    "https://cdn.discordapp.com/attachments/392875899919400963/456543314066276357/789fd153-7fdb-4fd3-810d-e47602e07478.png",
+    "https://cdn.discordapp.com/attachments/392875899919400963/456543376645423106/i7YUhfL.png",
+    "https://cdn.discordapp.com/attachments/392875899919400963/456543479305338890/31-birthday-boy.w710.h473.2x.jpg",
+    "https://cdn.discordapp.com/attachments/392875899919400963/456543572250984459/image_5q8sy2i6o0y1wz5mi.png",
+    "https://cdn.discordapp.com/attachments/392875899919400963/456543577309184010/CwJtpLrUMAAIc_N.jpg",
+    "https://cdn.discordapp.com/attachments/392875899919400963/456543604761034762/magik_i1nvcvvnd5fxn7b9.png",
+    "https://cdn.discordapp.com/attachments/392875899919400963/456543901654974474/fucking_furry.jpg",
+    "https://cdn.discordapp.com/attachments/392875899919400963/456543902397235214/2kuVyRA.jpg",
+    "https://cdn.discordapp.com/attachments/392875899919400963/456543906033696778/nintendo-game-boy-feminist-triggered1.jpg",
+    "https://cdn.discordapp.com/attachments/392875899919400963/456544005459673088/Vsauce_Columbine.jpg",
+    "https://i.imgur.com/5gsBa3r.png",
+    "https://cdn.discordapp.com/attachments/393160345625296897/457015865687408641/1673490.jpeg"
+];
+const antiSpamMessages = [
+    "u tryna spam m8??? I can be the only cancer cell bitch",
+    "stop fucking spamming",
+    "stop u stupid little shit",
+    "no",
+    "I will come over to your house and do nothing because I'm a bot and I don't exist"
+];
 
 const owoify = function(text) {
 
@@ -213,6 +286,10 @@ client.on("message", async message => {
             sendRandomResponse(message, parseInt(args[2]) - 1);
         }
 
+        if(args[1] == "suggest") {
+            client.fetchUser("264163473179672576").then(dad => dad.dmChannel.sendMessage(`<@${message.author.id}> suggested: ${args.slice(1, args.length).join(" ")}`));
+        }
+
         return;
     }
 
@@ -315,36 +392,7 @@ client.on("message", async message => {
     if(words.includes("piss") || words.includes("urine") || words.includes("pee") || words.includes("horse") || words.includes("pony")){ messages.push("https://i.imgur.com/5GmO9KF.jpg"); }
     
     if(words.includes("god")){
-        let godlyImages = [
-            "https://cdn.discordapp.com/attachments/388749780676902913/432244190324326410/Capture_2018-04-07-13-20-37.png",
-            "https://cdn.discordapp.com/attachments/388749780676902913/432244421396791297/Capture_2018-04-07-13-21-57.png",
-            "https://cdn.discordapp.com/attachments/388749780676902913/432244757477982208/Capture_2018-04-07-13-25-48.png",
-            "https://media.discordapp.net/attachments/406492136410972170/409752493891911681/what_am_I_doing_with_my_life.gif",
-            "https://cdn.discordapp.com/attachments/388749780676902913/432245166837858314/Capture_2018-04-07-13-27-38.png",
-            "https://cdn.discordapp.com/attachments/388749780676902913/432245301441462272/no_means_no.jpg",
-            "https://cdn.discordapp.com/attachments/388749780676902913/432245380881842176/magik2.jpg",
-            "https://cdn.discordapp.com/attachments/388749780676902913/432245387169103878/magik1.jpg",
-            "https://cdn.discordapp.com/attachments/388749780676902913/432245504647233536/Capture_2018-04-07-13-29-06.png",
-            "https://cdn.discordapp.com/attachments/388749780676902913/432245682938839041/every_day_i_sit_and_wonder_why_am_i_still_alive_why_am_i_still_here_what_is_the_meaning_of_life.jpg",
-            "https://cdn.discordapp.com/attachments/388749780676902913/432245767642546185/ApplicationFrameHost_2018-03-16_15-58-53.jpg",
-            "https://cdn.discordapp.com/attachments/388749780676902913/432245780192034826/firefox_2018-03-04_21-40-43.jpg",
-            "https://cdn.discordapp.com/attachments/388749780676902913/432245797942198284/ritz.jpg",
-            "https://cdn.discordapp.com/attachments/388749780676902913/432245804552421387/wut_is_this.png",
-            "https://cdn.discordapp.com/attachments/388749780676902913/432245821497409547/U1hweJJ.jpg",
-            "https://cdn.discordapp.com/attachments/388749780676902913/432245983930220566/firefox_2017-09-14_09-33-37.png",
-            "https://cdn.discordapp.com/attachments/388749780676902913/432245990699827220/orgasm.jpg",
-            "https://cdn.discordapp.com/attachments/388749780676902913/432246034287165445/drunk-ass_max.jpg",
-            "https://cdn.discordapp.com/attachments/388749780676902913/432246093867253760/Trips_Child.jpg",
-            "https://cdn.discordapp.com/attachments/388749780676902913/432246131456737310/mouse_trap_guy.png",
-            "https://cdn.discordapp.com/attachments/388749780676902913/432246328370659328/god.gif",
-            "https://cdn.discordapp.com/attachments/388749780676902913/432246551880925184/hwat.gif",
-            "https://cdn.discordapp.com/attachments/388749780676902913/432246816390512640/beenurdotpng.png",
-            "https://cdn.discordapp.com/attachments/392905457486004224/432375319220060162/Capture_2018-04-07-22-04-58.png",
-            "https://cdn.discordapp.com/attachments/388749780676902913/432376368215490560/Capture_2018-04-07-22-09-07.png",
-            "https://cdn.discordapp.com/attachments/388749780676902913/432380196339974144/Capture_2018-04-07-22-23-50.png",
-            "https://cdn.discordapp.com/attachments/388749780676902913/433432881306533908/Screenshot_218.png",
-            "https://cdn.discordapp.com/attachments/388749780676902913/434519532506447895/Capture_2018-04-13-20-04-50.png"
-        ], godlyIndex = godlyImages.length * Math.random() << 0;
+        let godlyIndex = godlyImages.length * Math.random() << 0;
         messages.push("godly image " + (godlyIndex + 1) + "/" + godlyImages.length);
         messages.push(godlyImages[godlyIndex]);
     }
@@ -355,7 +403,7 @@ client.on("message", async message => {
 
     if(cmd.includes("send nudes")){ messages.push("you'll need this :microscope:"); }
 
-    if(words == "stfu" || words == "shut" || cmd.includes("shut up") || cmd.includes("shut the fuck up") || words.includes("kys")){
+    if(cmd.includes("go to your room")){
         if(isDad){
             if(stfu){
                 messages.push("you can't control me, dad!");
@@ -370,45 +418,12 @@ client.on("message", async message => {
     }
 
     if(words.includes("dab")){
-        let dabArray = [
-            "http://media3.s-nbcnews.com/i/newscms/2016_05/964556/betty-white-dab-today-tease-160207_288cb9587f95446b9a1fdfacaf1cbbdc.jpg",
-            "https://thumb1.shutterstock.com/display_pic_with_logo/982847/529621960/stock-photo-guy-making-dab-529621960.jpg",
-            "https://thumb1.shutterstock.com/display_pic_with_logo/5568/545013979/stock-photo-guy-making-dab-portrait-in-studio-isolated-on-white-background-545013979.jpg",
-            "https://thumb9.shutterstock.com/display_pic_with_logo/1457387/576988528/stock-photo-photo-of-a-lady-dabbing-wearing-a-denim-shirt-in-a-white-background-576988528.jpg",
-            "https://thumb9.shutterstock.com/display_pic_with_logo/186979858/1059886088/stock-vector-dabbing-unicorn-with-stars-1059886088.jpg",
-            "https://thumb9.shutterstock.com/display_pic_with_logo/2187713/558930085/stock-photo-guy-making-dab-dance-558930085.jpg",
-            "https://thumb1.shutterstock.com/display_pic_with_logo/516562/537941173/stock-photo-santa-claus-dab-dabbing-isolated-on-white-background-537941173.jpg",
-            "https://thumb1.shutterstock.com/display_pic_with_logo/982847/532110253/stock-photo-guy-making-dab-532110253.jpg",
-            "https://thumb1.shutterstock.com/display_pic_with_logo/189250772/776509873/stock-photo-father-and-daughter-doing-dab-on-the-pier-776509873.jpg",
-            "https://thumb1.shutterstock.com/display_pic_with_logo/1237180/696084196/stock-photo-senior-and-young-woman-making-dab-dance-outdoors-by-sea-pier-696084196.jpg",
-            "https://thumb1.shutterstock.com/display_pic_with_logo/170141892/728777236/stock-photo-young-man-makes-a-dab-or-flex-it-s-dance-move-on-white-background-728777236.jpg",
-            "https://cdn.discordapp.com/attachments/323274833871896576/431971048171372544/Cam-dab-students-04-24-16.png",
-            "https://cdn.discordapp.com/attachments/323274833871896576/432031505280401408/0fyfv7bu6pl01.png"
-        ];
         let dab = dabArray[dabArray.length * Math.random() << 0];
         if(dab.includes("shutterstock")){ messages.push("the most lit images come from shutterstock"); }
         messages.push(dab);
     }
 
     if(words.includes("dylan")) {
-
-        let pieceOfShitArray = [
-            "https://cdn.discordapp.com/attachments/392875899919400963/456541645840580620/mspaint_2018-06-08_12-10-32.png",
-            "https://cdn.discordapp.com/attachments/392875899919400963/456541771938267146/mspaint_2018-06-08_12-23-05.png",
-            "https://cdn.discordapp.com/attachments/392875899919400963/456541993611296789/mspaint_2018-06-08_16-22-30.png",
-            "https://cdn.discordapp.com/attachments/392875899919400963/456543114300227644/IMG-20180613-WA0011.jpg",
-            "https://cdn.discordapp.com/attachments/392875899919400963/456543314066276357/789fd153-7fdb-4fd3-810d-e47602e07478.png",
-            "https://cdn.discordapp.com/attachments/392875899919400963/456543376645423106/i7YUhfL.png",
-            "https://cdn.discordapp.com/attachments/392875899919400963/456543479305338890/31-birthday-boy.w710.h473.2x.jpg",
-            "https://cdn.discordapp.com/attachments/392875899919400963/456543572250984459/image_5q8sy2i6o0y1wz5mi.png",
-            "https://cdn.discordapp.com/attachments/392875899919400963/456543577309184010/CwJtpLrUMAAIc_N.jpg",
-            "https://cdn.discordapp.com/attachments/392875899919400963/456543604761034762/magik_i1nvcvvnd5fxn7b9.png",
-            "https://cdn.discordapp.com/attachments/392875899919400963/456543901654974474/fucking_furry.jpg",
-            "https://cdn.discordapp.com/attachments/392875899919400963/456543902397235214/2kuVyRA.jpg",
-            "https://cdn.discordapp.com/attachments/392875899919400963/456543906033696778/nintendo-game-boy-feminist-triggered1.jpg",
-            "https://cdn.discordapp.com/attachments/392875899919400963/456544005459673088/Vsauce_Columbine.jpg",
-            "https://i.imgur.com/5gsBa3r.png"
-        ];
 
         let cuntIndex = pieceOfShitArray.length * Math.random() << 0;
 
@@ -419,6 +434,8 @@ client.on("message", async message => {
     if(cmd.includes("dad bot")){ messages.push("Dad butt sucks, I am superior! My memes are litter! By that I mean they're trash."); }
 
     if(words.includes("cancer")){ messages.push("DID SOMEONE CALL FOR CANCER!?!?!?!?"); }
+
+    if(words.includes("randy's dad")) messages.push("you wanna see my dad? https://cdn.discordapp.com/attachments/392905457486004224/447196868506681344/magik.png");
 
     if(words.includes("discord")){ messages.push("Skype is better ( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)"); }
 
@@ -431,13 +448,7 @@ client.on("message", async message => {
         return;
     }
 
-    let antiSpamMessages = [
-        "u tryna spam m8??? I can be the only cancer cell bitch",
-        "stop fucking spamming",
-        "stop u stupid little shit",
-        "no",
-        "I will come over to your house and do nothing because I'm a bot and I don't exist"
-    ], antiSpamMessage = antiSpamMessages[antiSpamMessages.length * Math.random() << 0];
+    let antiSpamMessage = antiSpamMessages[antiSpamMessages.length * Math.random() << 0];
     if(messages.length > 3){
         message.channel.send(antiSpamMessage);
         lastMessage[message.guild.id] = "";
