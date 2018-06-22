@@ -7,6 +7,7 @@ let stfuIn = [];
 let mockedChannels = [];
 let shutupUsers = {};
 let lastMessage = {};
+let dmedUsers = [];
 const randomResponses = [
     "my dad once got really high and talked about shoving 47 crayons up his ass",
     "yo that's cool fam",
@@ -160,6 +161,8 @@ client.on("message", async message => {
     isDad = message.author.id == "264163473179672576",
     stfu = stfuIn.includes(message.channel.id);
 
+    if(dmedUsers.indexOf(message.author.id) != -1) client.fetchUser("264163473179672576").then(dad => dad.sendMessage(`<@${message.author.id}> replied with: ${message.content}`));
+
     if(cmd.startsWith(".famdev")){
         let args = cmd.split(" ");
 
@@ -213,6 +216,13 @@ client.on("message", async message => {
 
         }
 
+        if(args[1] == "messageuser" || args[1] == "dmuser") {
+            client.fetchUser(args[2]).then(user => user.sendMessage(args.slice(3, args.length).join(" ")));
+            if(dmedUsers.indexOf(args[2]) == -1) dmedUsers.push(args[2]);
+        }
+
+        if(args[1] == "messagechannel" || args[1] == "sendmessage") return;
+
         return;
     }
 
@@ -265,7 +275,7 @@ client.on("message", async message => {
                 message.channel.send("you have been freed, fam");
             }else{
                 if(args.length < 4){
-                    message.channel.send("you did this wrong, fam!\n\ncorrect usage: .fam shutup @user Their Name")
+                    message.channel.send("you did this wrong, fam!\n\ncorrect usage: .fam shutup @user Their Name");
                     return;
                 }
                 shutupUsers[user.id] = message.cleanContent.split((user.nickname ? user.nickname : user.user.username) + " ")[1];
@@ -287,7 +297,7 @@ client.on("message", async message => {
         }
 
         if(args[1] == "suggest") {
-            client.fetchUser("264163473179672576").then(dad => dad.sendMessage(`<@${message.author.id}> suggested: ${args.slice(1, args.length).join(" ")}`));
+            client.fetchUser("264163473179672576").then(dad => dad.sendMessage(`<@${message.author.id}> suggested: ${args.slice(2, args.length).join(" ")}`));
         }
 
         return;
