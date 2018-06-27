@@ -224,8 +224,8 @@ client.on("message", async message => {
 
 		if(args[1] == "closedm") dmedUsers.splice(dmedUsers.indexOf(args[2]), 1);
 		
-		if(args[1] == "setchannel") {
-			if(client.guilds[args[2]]) {
+		if(args[1] == "setchannel" || args[1] == "selectchannel") {
+			if(client.guilds[args[2].trim()]) {
 				if(client.guilds[args[2]][args[3]]) {
 					selectedChannel = client.guilds[args[2]][args[3]];
 					message.channel.send(client.guilds[args[2]].name + ", #" + client.guilds[args[2]][args[3]].name + " is now selected");
