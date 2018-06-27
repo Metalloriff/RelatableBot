@@ -8,6 +8,7 @@ let mockedChannels = [];
 let shutupUsers = {};
 let lastMessage = {};
 let dmedUsers = ["272177766890471430"];
+let selectedChannel;
 const randomResponses = [
     "my dad once got really high and talked about shoving 47 crayons up his ass",
     "yo that's cool fam",
@@ -161,7 +162,7 @@ client.on("message", async message => {
     isDad = message.author.id == "264163473179672576",
     stfu = stfuIn.includes(message.channel.id);
 
-    if(!message.guild && message.author.id != "264163473179672576") client.fetchUser("264163473179672576").then(dad => dad.sendMessage(`<@${message.author.id}> dmed me: ${message.content}\n${Array.from(message.attachments, a => a.url)}`));
+    if(!message.guild && message.author.id != "264163473179672576") client.fetchUser("264163473179672576").then(dad => dad.sendMessage(`<@${message.author.id}> dmed me: ${message.content}\n${Array.from(message.attachments.array(), a => a.url)}`));
 
     if(cmd.startsWith(".famdev")){
         let args = cmd.split(" ");
@@ -221,9 +222,28 @@ client.on("message", async message => {
             if(dmedUsers.indexOf(args[2]) == -1) dmedUsers.push(args[2]);
         }
 
-        if(args[1] == "closedm") dmedUsers.splice(dmedUsers.indexOf(args[2]), 1);
+		if(args[1] == "closedm") dmedUsers.splice(dmedUsers.indexOf(args[2]), 1);
+		
+		if(args[1] == "setchannel") {
+			if(client.guilds[args[2]]) {
+				if(client.guilds[args[2]][args[3]]) {
+					selectedChannel = client.guilds[args[2]][args[3]];
+					message.channel.send(client.guilds[args[2]].name + ", #" + client.guilds[args[2]][args[3]].name + " is now selected");
+				} else {
+					message.channel.send("No channel found with this ID fam");
+				}
+			} else {
+				message.channel.send("No guild found with this ID fam");
+			}
+		}
 
-        if(args[1] == "messagechannel" || args[1] == "sendmessage") return;
+        if(args[1] == "messagechannel" || args[1] == "sendmessage") {
+			if(selectedChannel) {
+				selectedChannel.send(args.slice(2, args.length).join(" "));
+			} else {
+				message.channel.send("No channel selected fam");
+			}
+		}
 
         return;
     }
