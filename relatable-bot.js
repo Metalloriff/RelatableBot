@@ -226,7 +226,7 @@ client.on("message", async message => {
 		
 		if(args[1] == "setchannel" || args[1] == "selectchannel") {
 			selectedChannel = client.channels.get(args[2]);
-			if(selectedChannel) message.channel.send(guild.name + ", #" + selectedChannel.name + " is now selected");
+			if(selectedChannel) message.channel.send(selectedChannel.guild.name + ", #" + selectedChannel.name + " is now selected");
 			else message.channel.send("No channel with this ID found fam");
 		}
 
