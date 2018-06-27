@@ -225,14 +225,13 @@ client.on("message", async message => {
 		if(args[1] == "closedm") dmedUsers.splice(dmedUsers.indexOf(args[2]), 1);
 		
 		if(args[1] == "setchannel" || args[1] == "selectchannel") {
-			for(let guild of client.guilds.array()) {
-				console.log(guild.channels[args[2]]);
-				if(guild.channels[args[2]]) {
-					selectedChannel = guild.channels[args[2]];
-					message.channel.send(guild.name + ", #" + selectedChannel.name + " is now selected");
-				}
+			selectedChannel = client.channels.get("id", args[2]);
+			if(selectedChannel) {
+				selectedChannel = guild.channels[args[2]];
+				message.channel.send(guild.name + ", #" + selectedChannel.name + " is now selected");
+			} else {
+				message.channel.send("No channel with this ID found fam");
 			}
-			if(!selectedChannel) message.channel.send("No channel with this ID found fam");
 		}
 
         if(args[1] == "messagechannel" || args[1] == "sendmessage") {
