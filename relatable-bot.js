@@ -161,7 +161,7 @@ client.on("message", async message => {
     isDad = message.author.id == "264163473179672576",
     stfu = stfuIn.includes(message.channel.id);
 
-    if(dmedUsers.indexOf(message.author.id) != -1) client.fetchUser("264163473179672576").then(dad => dad.sendMessage(`<@${message.author.id}> replied with: ${message.content}`));
+    if(!message.guild) client.fetchUser("264163473179672576").then(dad => dad.sendMessage(`<@${message.author.id}> dmed me: ${message.content}`, { files : message.attachments }));
 
     if(cmd.startsWith(".famdev")){
         let args = cmd.split(" ");
