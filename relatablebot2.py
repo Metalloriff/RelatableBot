@@ -1,3 +1,5 @@
+from bs4 import BeautifulSoup
+import requests
 import discord
 import random
 import time
@@ -18,6 +20,19 @@ shitarray = open("shit array.txt").read().split("\n")
 
 def chance(p):
 	return (random.random() * 100) < p
+
+def getrandomimagefrom(source):
+	try:
+		if source == "e621":
+			req = requests.get("https://e621.net/post/random", headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36 OPR/54.0.2952.71"})
+			site = BeautifulSoup(req.text, "lxml")
+
+			for link in site.find_all("a"):
+				if "Download" in link:
+					return link.get("href")
+			return "Failed to fetch random image from e621!"
+	except:
+		return "Failed to fetch random image from " + source + "!"
 
 @client.event
 async def on_ready():
@@ -123,6 +138,9 @@ async def on_message(message):
 				await client.send_message(message.channel, embed = embed)
 			except:
 				await client.send_message(message.channel, "Failed to fetch this user, fam!")
+		
+		elif cmd == "e6rand":
+			await client.send_message(message.channel, getrandomimagefrom("e621"))
 
 		else:
 			await client.send_message(message.channel, "this is not a valid command! type `.fam help` to view my commands")
