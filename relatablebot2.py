@@ -75,9 +75,15 @@ async def on_message(message):
 				await client.send_message(message.channel, "They won't know what him 'em, fam! <:wellfricklyfrack:473254617006997505>")
 			except:
 				await client.send_message(message.channel, "Failed to message this channel, fam!")
+		
+		elif cmd == "eval":
+			try:
+				await client.send_message(message.channel, str(eval(" ".join(args[2:]))))
+			except:
+				await client.send_message(message.channel, "Failed, fam!")
 
 		else:
-			await client.send_message(message.channel, "Available commands: showguilds, dmuser, messagechannel")
+			await client.send_message(message.channel, "Available commands: showguilds, dmuser, messagechannel, eval")
 		
 		return
 	
