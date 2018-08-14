@@ -279,4 +279,6 @@ async def on_typing(channel, user, when):
 	if chance(5):
 		await client.send_message(channel, "well hi there " + user.name)
 
+print(os.getenv("BOT_TOKEN"))
+
 client.run(os.getenv("BOT_TOKEN"))
