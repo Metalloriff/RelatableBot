@@ -1,1 +1,1 @@
-worker node relatable-bot.js
+worker python relatablebot2.py
