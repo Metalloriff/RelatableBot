@@ -22,7 +22,7 @@ def chance(p):
 @client.event
 async def on_ready():
 	print("ready fam")
-	await client.change_presence(game = discord.Game(name = "being rewritten in Python fam"))
+	await client.change_presence(game = discord.Game(name = "naughty videos. Don't tell my dad.", type = 3))
 
 @client.event
 async def on_message(message):
@@ -278,7 +278,5 @@ async def on_member_ban(member):
 async def on_typing(channel, user, when):
 	if chance(5):
 		await client.send_message(channel, "well hi there " + user.name)
-
-print(os.getenv("BOT_TOKEN"))
 
 client.run(os.getenv("BOT_TOKEN"))
