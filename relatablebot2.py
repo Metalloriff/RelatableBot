@@ -284,7 +284,8 @@ async def on_message_delete(message):
 
 @client.event
 async def on_channel_create(channel):
-	await client.send_message(channel, "first!")
+	if not channel.is_private:
+		await client.send_message(channel, "first!")
 
 @client.event
 async def on_member_join(member):
