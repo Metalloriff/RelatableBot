@@ -17,6 +17,7 @@ lastheccorfricc = ""
 godlyimages = open("godly images.txt").read().split("\n")
 dab = open("dabs.txt").read().split("\n")
 shitarray = open("shit array.txt").read().split("\n")
+succmemes = open("succ memes.txt").read().split("\n")
 
 def chance(p):
 	return (random.random() * 100) < p
@@ -29,7 +30,7 @@ def getrandomimagefrom(source):
 
 			for link in site.find_all("a"):
 				if "Download" in link:
-					return link.get("href")
+					return link.get("href") + "\nSource: <" + req.url + ">"
 			return "Failed to fetch random image from e621!"
 	except:
 		return "Failed to fetch random image from " + source + "!"
@@ -276,6 +277,9 @@ async def on_message(message):
 	
 	if "women" in words or "woman" in words or "girl" in words:
 		return await client.send_message(message.channel, "https://cdn.discordapp.com/attachments/287694673999298560/444917411200630784/af8d88de5b8e8c39a7b3e4e9daa7520a.jpg")
+	
+	if "trip" in words:
+		return await client.send_message(message.channel, random.choice(succmemes))
 	
 @client.event
 async def on_message_delete(message):
