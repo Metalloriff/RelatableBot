@@ -20,7 +20,7 @@ shitarray = open("shit array.txt").read().split("\n")
 succmemes = open("succ memes.txt").read().split("\n")
 
 def chance(p):
-	return (random.random() * 100) < p
+	return random.random() < (p / 100)
 
 def getrandomimagefrom(source):
 	try:
@@ -305,7 +305,7 @@ async def on_member_ban(member):
 
 @client.event
 async def on_typing(channel, user, when):
-	if chance(5):
+	if chance(2):
 		await client.send_message(channel, "well hi there " + user.name)
 
 client.run(os.getenv("BOT_TOKEN"))
