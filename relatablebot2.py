@@ -4,6 +4,7 @@ import discord
 import random
 import time
 import os
+import re
 
 client = discord.Client()
 
@@ -44,7 +45,7 @@ async def on_ready():
 async def on_message(message):
 	isdad = message.author.id == dad
 	msg = message.content.lower()
-	words = msg.split(" ")
+	words = re.sub("[^A-Z a-z]", "", msg).split(" ")
 
 	if message.author.bot:
 		return
