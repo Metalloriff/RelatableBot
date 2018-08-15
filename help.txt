@@ -1,38 +1,26 @@
-My trigger words are the following:
-```
-	Anything beginning with I or I'm
-	Heck and frick
-	Bass
-	Being pinged
-	Piss, urine, pee, horse, and pony
-	God
-	Help
-	Dylan
-	Dog
-	Send nudes
-	STFU, shut, gay, shut the fuck up, shut up, KYS
-	Dab
-	Dad bot
-	Cancer
-	Discord
-	Useless bot
-	Say something
-	Women, woman, girl, girls
-	OwO
-```
-Say any of those words/phrases and I'll get triggered. I also have a 5% chance of randomly getting triggerd, but you can relate, can't you fam?
+I have trigger words. Certain words make me all triggered and I respond. I also have a 5% chance of randomly getting triggered, but you can relate, can't you fam?
 
-My commands are the following:
-```
-	.fam help - Displays this cancerous menu.
-	.fam getinvite - Gives the link to dad's cancerous server.
-	.fam info - Displays some cancerous info about myself.
-	.fam welcome - Displays the cancerous welcome message.
-	.fam mock - Literal cancer, and it should not exist.
-	.fam shutup <usertag> <name> - Says "shut up <name>" every time <user> says something.
-```
+I also have commands, which are the following:
+
+
+`.fam help` - Displays this cancerous menu.
+
+`.fam getinvite` - Gives the link to dad's cancerous server.
+
+`.fam mock` - Literal cancer, and it should not exist, do not enter this command.
+
+`.fam shutup` <user name or id> <name> - Says "shut up <name>" every time <user> says something.
+
+`.fam say <number>` - Says one of my cancerous random responses of your choice.
+
+`.fam suggest <suggestion>` - Sends the rest of your cancerous message to my dad as a suggestion for him to consider and probably never add because he's a lazy piece of shit.
+
+`.fam fetchuser <userid>` - Fetches a user's info by their ID. Was a simple embed test my dad made.
+
+`.fam e6rand` - Grabs a random image from <https://e621.net>. Fucking furry.
+
 
 If you want to invite me to join your fam elsewhere, give your fam this link, fam.
 <https://discordapp.com/api/oauth2/authorize?client_id=431835277992919040&permissions=604097600&scope=bot>
 
-If you need any help or have any cancerous suggestions, talk to dad, Metalloriff#2891.
+If you need any help or have any cancerous suggestions, talk to dad, Metalloriff#2891, or use the suggest command.
