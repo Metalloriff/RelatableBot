@@ -9,7 +9,7 @@ I also have commands, which are the following:
 
 `.fam mock` - Literal cancer, and it should not exist, do not enter this command.
 
-`.fam shutup` <user name or id> <name> - Says "shut up <name>" every time <user> says something.
+`.fam shutup <user name or id> <name>` - Says "shut up <name>" every time <user> says something.
 
 `.fam say <number>` - Says one of my cancerous random responses of your choice.
 
