@@ -47,7 +47,7 @@ async def on_message(message):
 	msg = message.content.lower()
 	words = re.sub("[^A-Z a-z]", "", msg).split(" ")
 
-	if message.author.bot:
+	if message.author.id == "431835277992919040":
 		return
 	
 	if msg.startswith(".famdev"):
@@ -167,6 +167,9 @@ async def on_message(message):
 		else:
 			return await client.send_message(message.channel, "https://youtu.be/LR851d7QYco")
 	
+	if message.channel.id in mockedchannels:
+		return await client.send_message(message.channel, message.content)
+	
 	if msg.startswith(("i ", "i'm", "im", "my ", "same", "^")):
 		return await client.send_message(message.channel, "same fam " + random.choice(("<:wellfricklyfrack:473254617006997505>", "<:samefam:433664866222604344>", "<:heythatsprettynate:448208498250088448>")))
 	
@@ -180,12 +183,13 @@ async def on_message(message):
 			"maybe"
 		)))
 	
+	if "shut up" in msg:
+		return await client.send_message(message.channel, "no u")
+	
 	if message.author.id in shutted:
 		return await client.send_message(message.channel, "shut up " + shutted[message.author.id])
 	elif message.author.name in shutted:
 		return await client.send_message(message.channel, "shut up " + shutted[message.author.name])
-	elif message.channel in mockedchannels:
-		return await client.send_message(message.channel, message.content)
 	
 	if chance(5) or "say something" in msg:
 		return await client.send_message(message.channel, random.choice(randresponses))
