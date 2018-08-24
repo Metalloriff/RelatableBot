@@ -50,6 +50,9 @@ async def on_message(message):
 	if message.author.id == "431835277992919040":
 		return
 	
+	if not message.server and message.author.id != dad:
+		await client.send_message(await client.get_user_info(dad), message.author.name + " (" + message.author.id + " ) slid into my DM's with: " + message.content)
+	
 	if msg.startswith(".famdev"):
 		if not isdad:
 			return
@@ -155,6 +158,9 @@ async def on_message(message):
 		
 		return
 	
+	if chance(2) or "randy" in msg:
+		await client.add_reaction(message, random.choice(client.get_all_emojis()))
+	
 	if message.server != None and message.server.id in silence:
 		if "go to your room" in msg and isdad:
 			silence.remove(message.server.id)
@@ -240,7 +246,8 @@ async def on_message(message):
 			"wana fite m8???",
 			message.author.avatar_url,
 			"@lowercaseletters",
-			"go away lowercase"
+			"go away lowercase",
+			"<@454465635972284428>"
 		)))
 	
 	if "piss" in words or "urine" in words or "pee" in words or "horse" in words or "pony" in words:
@@ -288,7 +295,7 @@ async def on_message(message):
 	
 @client.event
 async def on_message_delete(message):
-	if chance(50):
+	if chance(5):
 		await client.send_message(message.channel, message.author.mention + " I saw that!")
 
 @client.event
