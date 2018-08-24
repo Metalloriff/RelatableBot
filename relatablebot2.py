@@ -68,6 +68,8 @@ async def helpmenu():
 		icon_url = my.avatar_url
 	)
 
+	return embed
+
 @client.event
 async def on_message(message):
 	isdad = message.author.id == dad
