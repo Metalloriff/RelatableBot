@@ -159,7 +159,7 @@ async def on_message(message):
 		return
 	
 	if chance(2) or "randy" in msg:
-		await client.add_reaction(message, random.choice(client.get_all_emojis()))
+		await client.add_reaction(message, random.choice(list(client.get_all_emojis())))
 	
 	if message.server != None and message.server.id in silence:
 		if "go to your room" in msg and isdad:
