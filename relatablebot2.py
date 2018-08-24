@@ -41,6 +41,33 @@ async def on_ready():
 	print("ready fam")
 	await client.change_presence(game = discord.Game(name = "naughty videos. Don't tell my dad.", type = 3))
 
+async def helpmenu():
+	embed = discord.Embed(
+		title = "Help Me Dad",
+		description = "I have trigger words. Certain words make me all triggered and I respond. I also have a 5% chance of randomly getting triggered, but you can relate, can't you fam?\n\nI also have commands, which are the following:",
+		colour = 0x7289da
+	)
+
+	embed.add_field(name = ".fam help", value = "Displays this cancerous menu.")
+	embed.add_field(name = ".fam getinvite", value = "Gives the link to dad's cancerous server.")
+	embed.add_field(name = ".fam mock", value = "Literal cancer, and it should not exist, do not enter this command.")
+	embed.add_field(name = ".fam shutup <user name or user id> <name>", value = "Says 'shut up <name>' every time <user> says something.")
+	embed.add_field(name = ".fam say <which>", value = "Says one of my cancerous random responses of your choice.")
+	embed.add_field(name = ".fam suggest <suggestion>", value = "Sends the rest of your cancerous message to my dad as a suggestion for him to consider and probably never add because he's a lazy piece of shit.")
+	embed.add_field(name = ".fam fetchuser <user id>", value = "Fetches a user's info by their ID. Was a simple embed test my dad made.")
+	embed.add_field(name = ".fam e6rand", value = "Grabs a random image from https://e621.net/ you fucking furry.")
+
+	embed.add_field(name = "", value = "If you want to invite me to join your fam elsewhere, give your fam this link, fam.\nhttps://discordapp.com/api/oauth2/authorize?client_id=431835277992919040&permissions=604097600&scope=bot")
+
+	embed.add_field(name = "", value = "If you need any help or have any cancerous suggestions, talk to dad, Metalloriff#2891, or use the suggest command.")
+
+	my = await client.get_user_info(dad)
+
+	embed.set_footer(
+		text = "Developed by " + my.name + "#" + my.discriminator,
+		icon_url = my.avatar_url
+	)
+
 @client.event
 async def on_message(message):
 	isdad = message.author.id == dad
@@ -51,7 +78,7 @@ async def on_message(message):
 		return
 	
 	if not message.server and message.author.id != dad:
-		await client.send_message(await client.get_user_info(dad), message.author.name + " (" + message.author.id + " ) slid into my DM's with: " + message.content)
+		await client.send_message(await client.get_user_info(dad), message.author.name + " (" + message.author.id + ") slid into my DM's with: " + message.content)
 	
 	if msg.startswith(".famdev"):
 		if not isdad:
@@ -97,7 +124,7 @@ async def on_message(message):
 		cmd = args[1].lower()
 
 		if cmd == "help":
-			await client.send_message(message.channel, open("help.txt").read())
+			await client.send_message(message.channel, "", embed = await helpmenu())
 
 		elif cmd == "getinvite":
 			await client.send_message(message.channel, "https://discord.gg/GyPaSWB")
