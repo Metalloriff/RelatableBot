@@ -124,7 +124,7 @@ async def on_message(message):
 		cmd = args[1].lower()
 
 		if cmd == "help":
-			await client.send_message(message.channel, "", embed = await helpmenu())
+			await client.send_message(message.channel, embed = await helpmenu())
 
 		elif cmd == "getinvite":
 			await client.send_message(message.channel, "https://discord.gg/GyPaSWB")
