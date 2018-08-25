@@ -48,7 +48,15 @@ async def helpmenu():
 		colour = 0x7289da
 	)
 
-	embed.add_field(name = "", value = "If you need any help or have any cancerous suggestions, talk to dad, Metalloriff#2891, or use the suggest command.")
+	embed.add_field(name = ".fam help", value = "Displays this cancerous menu.")
+	embed.add_field(name = ".fam getinvite", value = "Gives the link to dad's cancerous server.")
+	embed.add_field(name = ".fam mock", value = "Literal cancer, and it should not exist, do not enter this command.")
+	embed.add_field(name = ".fam shutup <user name or user id> <name>", value = "Says 'shut up <name>' every time <user> says something.")
+	embed.add_field(name = ".fam say <which>", value = "Says one of my cancerous random responses of your choice.")
+	embed.add_field(name = ".fam suggest <suggestion>", value = "Sends the rest of your cancerous message to my dad as a suggestion for him to consider and probably never add because he's a lazy piece of shit.")
+	embed.add_field(name = ".fam fetchuser <user id>", value = "Fetches a user's info by their ID. Was a simple embed test my dad made.")
+	embed.add_field(name = ".fam e6rand", value = "Grabs a random image from https://e621.net/ you fucking furry.")
+
 
 	my = await client.get_user_info(dad)
 
