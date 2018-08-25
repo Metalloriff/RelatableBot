@@ -44,19 +44,22 @@ async def on_ready():
 async def helpmenu():
 	embed = discord.Embed(
 		title = "Help Me Dad",
-		description = "I have trigger words. Certain words make me all triggered and I respond. I also have a 5%% chance of randomly getting triggered, but you can relate, can't you fam?\n\nAvailable commands:",
+		description = "I have trigger words. Certain words make me all triggered and I respond. I also have a 5%% chance of randomly getting triggered, but you can relate, can't you fam?",
 		colour = 0x7289da
 	)
 
-	embed.add_field(name = ".fam help", value = "Displays this cancerous menu.")
-	embed.add_field(name = ".fam getinvite", value = "Gives the link to dad's cancerous server.")
-	embed.add_field(name = ".fam mock", value = "Literal cancer, and it should not exist, do not enter this command.")
-	embed.add_field(name = ".fam shutup <user name or user id> <name>", value = "Says 'shut up <name>' every time <user> says something.")
-	embed.add_field(name = ".fam say <which>", value = "Says one of my cancerous random responses of your choice.")
-	embed.add_field(name = ".fam suggest <suggestion>", value = "Sends the rest of your cancerous message to my dad as a suggestion for him to consider and probably never add because he's a lazy piece of shit.")
-	embed.add_field(name = ".fam fetchuser <user id>", value = "Fetches a user's info by their ID. Was a simple embed test my dad made.")
-	embed.add_field(name = ".fam e6rand", value = "Grabs a random image from https://e621.net/ you fucking furry.")
+	embed.add_field(name = "Available commands:", inline = false)
 
+	embed.add_field(name = ".fam help", value = "Displays this cancerous menu.", inline = false)
+	embed.add_field(name = ".fam getinvite", value = "Gives the link to dad's cancerous server.", inline = false)
+	embed.add_field(name = ".fam mock", value = "Literal cancer, and it should not exist, do not enter this command.", inline = false)
+	embed.add_field(name = ".fam shutup <user name or user id> <name>", value = "Says 'shut up <name>' every time <user> says something.", inline = false)
+	embed.add_field(name = ".fam say <which>", value = "Says one of my cancerous random responses of your choice.", inline = false)
+	embed.add_field(name = ".fam suggest <suggestion>", value = "Sends the rest of your cancerous message to my dad as a suggestion for him to consider and probably never add because he's a lazy piece of shit.", inline = false)
+	embed.add_field(name = ".fam fetchuser <user id>", value = "Fetches a user's info by their ID. Was a simple embed test my dad made.", inline = false)
+	embed.add_field(name = ".fam e6rand", value = "Grabs a random image from https://e621.net/ you fucking furry.", inline = false)
+
+	embed.add_field(name = "More info", value = "If you want to invite me to join your fam elsewhere, give your fam this link, fam.\nhttps://discordapp.com/api/oauth2/authorize?client_id=431835277992919040&permissions=604097600&scope=bot\n\nIf you need any help or have any cancerous suggestions, talk to dad, Metalloriff#2891, or use the suggest command.", inline = false)
 
 	my = await client.get_user_info(dad)
 
