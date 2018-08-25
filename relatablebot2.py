@@ -44,7 +44,7 @@ async def on_ready():
 async def helpmenu():
 	embed = discord.Embed(
 		title = "Help Me Dad",
-		description = "I have trigger words. Certain words make me all triggered and I respond. I also have a 5%% chance of randomly getting triggered, but you can relate, can't you fam?\n\nI also have commands, which are the following:",
+		description = "Available commands:",
 		colour = 0x7289da
 	)
 
