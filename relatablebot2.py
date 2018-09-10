@@ -35,12 +35,12 @@ def getrandomimagefrom(source):
 					return link.get("href") + "\nSource: <" + req.url + ">"
 			return "Failed to fetch random image from e621!"
 		elif source == "e621 deathwish":
-			req = request.get("https://e621.net/post/index/" + str(random.randint(0, 20)) +  "/order:score_asc", headers = h)
+			req = requests.get("https://e621.net/post/index/" + str(random.randint(0, 20)) +  "/order:score_asc", headers = h)
 			site = BeautifulSoup(req.text, "lxml")
 
 			images = site.find_all("span", attrs = { "class": "thumb" })
 
-			req = request.get("https://e621.net" + random.choice(images).find("a").get("href"), headers = h)
+			req = requests.get("https://e621.net" + random.choice(images).find("a").get("href"), headers = h)
 			site = BeautifulSoup(req.text, "lxml")
 
 			for link in site.find_all("a"):
