@@ -25,14 +25,28 @@ def chance(p):
 
 def getrandomimagefrom(source):
 	try:
+		h = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36 OPR/54.0.2952.71"}
 		if source == "e621":
-			req = requests.get("https://e621.net/post/random", headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36 OPR/54.0.2952.71"})
+			req = requests.get("https://e621.net/post/random", headers = h)
 			site = BeautifulSoup(req.text, "lxml")
 
 			for link in site.find_all("a"):
 				if "Download" in link:
 					return link.get("href") + "\nSource: <" + req.url + ">"
 			return "Failed to fetch random image from e621!"
+		elif source == "e621 deathwish":
+			req = request.get("https://e621.net/post/index/" + str(random.randint(0, 20)) +  "/order:score_asc", headers = h)
+			site = BeautifulSoup(req.text, "lxml")
+
+			images = site.find_all("span", attrs = { class: "thumb" })
+
+			req = request.get("https://e621.net" + random.choice(images).find("a").get("href"), headers = h)
+			site = BeautifulSoup(req.text, "lxml")
+
+			for link in site.find_all("a"):
+				if "Download" in link:
+					return link.get("href") + "\nSource: <" + req.url + ">"
+			return "Failed to fetch an image! You were saved by likely dad's shitty programming skills!"
 	except:
 		return "Failed to fetch random image from " + source + "!"
 
@@ -178,6 +192,9 @@ async def on_message(message):
 		
 		elif cmd == "e6rand":
 			await client.send_message(message.channel, getrandomimagefrom("e621"))
+		
+		elif cmd == "e6deathwish":
+			await client.send_message(message.channel, getrandomimagefrom("e621 deathwish"))
 
 		else:
 			await client.send_message(message.channel, "this is not a valid command! type `.fam help` to view my commands")
