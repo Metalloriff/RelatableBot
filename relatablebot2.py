@@ -69,6 +69,7 @@ async def helpmenu():
 	embed.add_field(name = ".fam suggest <suggestion>", value = "Sends the rest of your cancerous message to my dad as a suggestion for him to consider and probably never add because he's a lazy piece of shit.", inline = False)
 	embed.add_field(name = ".fam fetchuser <user id>", value = "Fetches a user's info by their ID. Was a simple embed test my dad made.", inline = False)
 	embed.add_field(name = ".fam e6rand", value = "Grabs a random image from https://e621.net/ you fucking furry.", inline = False)
+	embed.add_field(name = ".fam e6deathwish", value = "Please... for the love of my dad... do not enter this. Just, don't.", inline = False)
 
 	embed.add_field(name = "More info", value = "If you want to invite me to join your fam elsewhere, give your fam this link, fam.\nhttps://discordapp.com/api/oauth2/authorize?client_id=431835277992919040&permissions=604097600&scope=bot\n\nIf you need any help or have any cancerous suggestions, talk to dad, Metalloriff#2891, or use the suggest command.", inline = False)
 
