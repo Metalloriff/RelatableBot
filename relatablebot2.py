@@ -38,7 +38,7 @@ def getrandomimagefrom(source):
 			req = request.get("https://e621.net/post/index/" + str(random.randint(0, 20)) +  "/order:score_asc", headers = h)
 			site = BeautifulSoup(req.text, "lxml")
 
-			images = site.find_all("span", attrs = { class: "thumb" })
+			images = site.find_all("span", attrs = { "class": "thumb" })
 
 			req = request.get("https://e621.net" + random.choice(images).find("a").get("href"), headers = h)
 			site = BeautifulSoup(req.text, "lxml")
