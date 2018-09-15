@@ -295,7 +295,7 @@ async def on_message(message):
 		)))
 	
 	if "piss" in words or "urine" in words or "pee" in words or "horse" in words or "pony" in words:
-		return await client.send_message(message.channel, "https://i.imgur.com/5GmO9KF.jpg")
+		return await client.send_message(message.channel, "https://cdn.discordapp.com/attachments/488151859513786388/490670600256356357/Thats_my_Fetish.png")
 	
 	if "god" in words:
 		rand = random.choice(godlyimages)
