@@ -97,7 +97,10 @@ async def on_message(message):
 	if message.author.id == "264163473179672576" and "i love you" in msg:
 		fuckaroos = client.get_server(message.server.id).members
 		for fuckaroo in fuckaroos:
-			await client.change_nickname(fuckaroo, None)
+			try:
+				await client.change_nickname(fuckaroo, None)
+			except:
+				pass
 		await client.send_message(message.channel, "where's the love for randy? he's doin all the work fam")
 	
 	if msg.startswith(".famdev"):
