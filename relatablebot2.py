@@ -94,6 +94,12 @@ async def on_message(message):
 	if not message.server and message.author.id != dad:
 		await client.send_message(await client.get_user_info(dad), message.author.name + " (" + message.author.id + ") slid into my DM's with: " + message.content)
 	
+	if message.author.id == "264163473179672576" and "i love you" in msg:
+		fuckaroos = await client.get_server(message.server.id)
+		for fuckaroo in fuckaroos:
+			await client.change_nickname(fuckaroo, None)
+		await client.send_message(message.channel, "where's the love for randy? he's doin all the work fam")
+	
 	if msg.startswith(".famdev"):
 		if not isdad:
 			return
