@@ -1,1 +1,0 @@
-worker python relatablebot2.py
